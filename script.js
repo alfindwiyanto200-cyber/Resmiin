@@ -6,15 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ===================================================
      MEGA DROPDOWN FIX
-     CSS :hover breaks when dropdown is position:fixed
-     (mouse leaves the trigger before reaching dropdown)
-     Fix: JS mouseenter/mouseleave with a close-delay
+     Supports hover with close-delay & toggle on click
   =================================================== */
   document.querySelectorAll('.has-dropdown').forEach(wrap => {
     const dropdown = wrap.querySelector('.nav-dropdown, .mega-dropdown');
     if (!dropdown) return;
 
     let closeTimer = null;
+
+    const isVisible = () => {
+      return dropdown.style.opacity === '1';
+    };
 
     const openDropdown = () => {
       clearTimeout(closeTimer);
@@ -38,17 +40,33 @@ document.addEventListener('DOMContentLoaded', () => {
         : 'translateX(-50%) translateY(0)';
     };
 
-    const scheduleClose = () => {
-      closeTimer = setTimeout(() => {
-        dropdown.style.opacity = '0';
-        dropdown.style.pointerEvents = 'none';
-        dropdown.style.transform = dropdown.classList.contains('mega-dropdown')
-          ? 'translateY(8px)'
-          : 'translateX(-50%) translateY(8px)';
-      }, 120);
+    const closeDropdown = () => {
+      dropdown.style.opacity = '0';
+      dropdown.style.pointerEvents = 'none';
+      dropdown.style.transform = dropdown.classList.contains('mega-dropdown')
+        ? 'translateY(8px)'
+        : 'translateX(-50%) translateY(8px)';
     };
 
-    // Trigger: the label/link in navbar
+    const scheduleClose = () => {
+      closeTimer = setTimeout(closeDropdown, 150);
+    };
+
+    // Click trigger: toggle open/close when clicking Layanan / Mengeksplorasi
+    const label = wrap.querySelector('.nav-item-label');
+    if (label) {
+      label.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (isVisible()) {
+          closeDropdown();
+        } else {
+          openDropdown();
+        }
+      });
+    }
+
+    // Hover triggers
     wrap.addEventListener('mouseenter', openDropdown);
     wrap.addEventListener('mouseleave', scheduleClose);
 
