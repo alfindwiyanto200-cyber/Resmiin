@@ -58,188 +58,144 @@ export default function ServiceDetailView(props: ServiceDetailProps) {
   const waUrl = `https://wa.me/62000000000?text=${encodeURIComponent(waMessage)}`;
 
   return (
-    <div className="bg-white">
+    <div>
       {/* BREADCRUMB */}
-      <div className="bg-slate-50 border-b border-slate-100 py-3 px-6 text-xs text-slate-500">
-        <div className="max-w-[1200px] mx-auto flex items-center gap-2">
-          <Link href="/" className="hover:text-blue-600">Beranda</Link>
-          <span>›</span>
-          <Link href="/#harga" className="hover:text-blue-600">Layanan</Link>
-          <span>›</span>
-          <span className="font-semibold text-slate-900">{title}</span>
+      <div className="breadcrumb-bar">
+        <div className="bc-inner">
+          <Link href="/">Beranda</Link>
+          <span className="bc-sep">›</span>
+          <Link href="/#harga">Layanan</Link>
+          <span className="bc-sep">›</span>
+          <span>{title}</span>
         </div>
       </div>
 
-      {/* HERO SECTION */}
-      <section className="py-16 md:py-24 px-6 max-w-[1200px] mx-auto min-h-[calc(100vh-160px)] flex items-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center w-full">
-          
-          {/* LEFT CONTENT */}
-          <div>
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-xs font-bold text-blue-600 mb-6 uppercase tracking-wider">
-              {badge}
-            </div>
+      {/* HERO LAYANAN */}
+      <section className="lyr-hero">
+        <div className="lyr-hero-inner">
+          {/* LEFT */}
+          <div className="lyr-left">
+            <div className="lyr-badge">{badge}</div>
+            <h1 className="lyr-h1">{title}</h1>
 
-            <h1 className="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight mb-6">
-              {title}
-            </h1>
-
-            <ul className="space-y-3 mb-8">
+            <ul className="lyr-checklist">
               {checklist.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-3 text-base md:text-lg text-slate-700 font-medium">
-                  <span className="text-blue-600 font-bold text-lg leading-none mt-0.5">✓</span>
-                  <span>{item}</span>
-                </li>
+                <li key={idx}>{item}</li>
               ))}
             </ul>
 
-            {/* PRICE WRAP */}
-            <div className="mb-8">
-              <span className="block text-xs font-medium text-slate-400 mb-1">Mulai dari</span>
-              <div className="flex items-baseline gap-3">
+            <div className="lyr-price-wrap">
+              <span className="lyr-price-label">Mulai dari</span>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px' }}>
                 {oldPrice && (
-                  <span className="line-through text-slate-400 font-semibold text-xl md:text-2xl">
+                  <span style={{ textDecoration: 'line-through', color: '#8FA8CC', fontSize: '20px', fontWeight: 500 }}>
                     {oldPrice}
                   </span>
                 )}
-                <span className="text-3xl md:text-4xl font-extrabold text-blue-600">
-                  {price}
-                </span>
+                <span className="lyr-price" style={{ color: '#1565C0' }}>{price}</span>
               </div>
             </div>
 
-            {/* CTA BUTTON */}
-            <a
-              href={waUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-block px-8 py-4 bg-blue-600 text-white rounded-xl font-bold text-base hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/30 hover:-translate-y-0.5 mb-6"
-            >
+            <a href={waUrl} className="lyr-cta" target="_blank" rel="noreferrer">
               {ctaText}
             </a>
 
-            <div className="flex items-center gap-2 text-xs text-slate-500 mb-6">
+            <div className="lyr-guarantee">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              <span>Konsultasi gratis sebelum memulai</span>
+              Konsultasi gratis sebelum memulai
             </div>
 
-            <div className="flex items-center gap-2 text-xs text-slate-500">
-              <span className="text-emerald-500 font-bold tracking-wider">★★★★★</span>
-              <span>Dipercaya lebih dari <strong className="text-slate-900 font-bold">2.500+ klien</strong></span>
-            </div>
-          </div>
-
-          {/* RIGHT VISUAL CARD */}
-          <div className="flex justify-center">
-            <div className="w-full max-w-[440px] bg-white border border-slate-200 rounded-3xl shadow-2xl overflow-hidden relative">
-              
-              {/* CARD HEADER */}
-              <div className="p-5 bg-slate-50 border-b border-slate-100 flex items-center gap-3">
-                <div className="w-11 h-11 rounded-xl bg-blue-100/60 flex items-center justify-center text-2xl shrink-0">
-                  {docIco}
-                </div>
-                <div className="flex-grow">
-                  <div className="text-sm font-bold text-slate-900">{docTitle}</div>
-                  <div className="text-xs text-slate-400">Resmiin • Dokumen Legalitas</div>
-                </div>
-                <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full">
-                  ✓ Terverifikasi
-                </span>
-              </div>
-
-              {/* CARD BODY PROGRESS */}
-              <div className="p-6 space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</div>
-                  <div>
-                    <div className="text-sm font-bold text-slate-800">Konsultasi &amp; Pengumpulan Data</div>
-                    <div className="text-xs text-emerald-600 font-semibold">Selesai</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">✓</div>
-                  <div>
-                    <div className="text-sm font-bold text-slate-800">Pembuatan &amp; Verifikasi Akta</div>
-                    <div className="text-xs text-emerald-600 font-semibold">Selesai</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-6 h-6 rounded-full border-2 border-blue-600 bg-white flex items-center justify-center text-xs shrink-0 mt-0.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-blue-600 animate-ping" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold text-slate-900">SK Kemenkumham &amp; NIB</div>
-                    <div className="text-xs text-blue-600 font-semibold">Dalam proses…</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 opacity-50">
-                  <div className="w-6 h-6 rounded-full border-2 border-slate-300 bg-white shrink-0 mt-0.5" />
-                  <div>
-                    <div className="text-sm font-semibold text-slate-600">Dokumen Complete Diserahkan</div>
-                    <div className="text-xs text-slate-400">Menunggu</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* FLOAT BADGE */}
-              <div className="absolute -bottom-2 right-6 bg-white border border-slate-200 rounded-full px-4 py-2 text-xs font-semibold text-slate-700 shadow-md flex items-center gap-1.5 animate-bounce">
-                <span>⚡</span>
-                <span>Estimasi <strong className="text-blue-600">{duration}</strong></span>
-              </div>
-
+            <div className="lyr-rating">
+              <span className="lyr-stars">★★★★★</span>
+              <span className="lyr-rating-text">Dipercaya lebih dari <strong>2.500+ klien</strong></span>
             </div>
           </div>
 
+          {/* RIGHT */}
+          <div className="lyr-right">
+            <div className="lyr-visual">
+              <div className="lyr-doc-card">
+                <div className="lyr-doc-header">
+                  <div className="lyr-doc-ico">{docIco}</div>
+                  <div className="lyr-doc-meta">
+                    <strong>{docTitle}</strong>
+                    <span>Resmiin • Dokumen Legalitas</span>
+                  </div>
+                  <span className="lyr-doc-status">✓ Terverifikasi</span>
+                </div>
+                <div className="lyr-doc-body">
+                  <div className="lyr-step-list">
+                    <div className="lyr-step done">
+                      <div className="lyr-step-dot done"></div>
+                      <div>
+                        <span className="lyr-step-name">Konsultasi &amp; Data Pendiri</span>
+                        <span className="lyr-step-info">Selesai</span>
+                      </div>
+                    </div>
+                    <div className="lyr-step done">
+                      <div className="lyr-step-dot done"></div>
+                      <div>
+                        <span className="lyr-step-name">Akta Notaris &amp; Pengesahan</span>
+                        <span className="lyr-step-info">Selesai</span>
+                      </div>
+                    </div>
+                    <div className="lyr-step active">
+                      <div className="lyr-step-dot active"></div>
+                      <div>
+                        <span className="lyr-step-name">SK Kemenkumham &amp; NIB</span>
+                        <span className="lyr-step-info lyr-step-progress">Dalam proses…</span>
+                      </div>
+                    </div>
+                    <div className="lyr-step">
+                      <div className="lyr-step-dot"></div>
+                      <div>
+                        <span className="lyr-step-name">Dokumen Complete Diserahkan</span>
+                        <span className="lyr-step-info">Menunggu</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="lyr-float-badge">
+                  <span>⚡</span>
+                  <span>Estimasi <strong>{duration}</strong></span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* FEATURES GRID SECTION */}
-      <section className="bg-slate-50 border-t border-slate-200/60 py-20 px-6">
-        <div className="max-w-[1200px] mx-auto">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-10 tracking-tight">
-            Yang Anda dapatkan dalam Paket {title}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* FEATURES */}
+      <section className="lyr-features-section">
+        <div className="lyr-features-inner">
+          <h2 className="lyr-features-heading">Kelengkapan Paket {title}</h2>
+          <div className="lyr-features-grid">
             {features.map((feat, i) => (
-              <div key={i} className="bg-white border border-slate-200/80 rounded-2xl p-6 hover:border-blue-500 hover:shadow-lg transition-all group">
-                <div className="text-3xl mb-3">{feat.ico}</div>
-                <h4 className="text-base font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
-                  {feat.title}
-                </h4>
-                <p className="text-sm text-slate-500 leading-relaxed">{feat.desc}</p>
+              <div key={i} className="lyr-feat-item">
+                <div className="lyr-feat-ico">{feat.ico}</div>
+                <h4>{feat.title}</h4>
+                <p>{feat.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* PROCESS SECTION */}
-      <section className="bg-slate-900 py-20 px-6 text-white">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-extrabold mb-4 leading-tight">
-              Tahapan proses {title}
-            </h2>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              Proses praktis &amp; transparan tanpa kerumitan bersama tim hukum profesional Resmiin.
-            </p>
-            <a href={waUrl} target="_blank" rel="noreferrer" className="text-sm font-bold text-blue-400 hover:text-white transition-colors">
-              Tanya CS Kami →
-            </a>
+      {/* PROCESS */}
+      <section className="lyr-process-section">
+        <div className="lyr-process-inner">
+          <div className="lyr-process-left">
+            <h2>Tahapan proses {title}</h2>
+            <p>Proses transparan &amp; pendampingan penuh dari tim hukum Resmiin.</p>
+            <a href={waUrl} target="_blank" rel="noreferrer" className="lyr-process-cta">Tanya CS Kami →</a>
           </div>
-
-          <div className="md:col-span-2 space-y-6">
+          <div className="lyr-process-steps">
             {steps.map((st, idx) => (
-              <div key={idx} className="flex gap-5 pb-6 border-b border-slate-800 last:border-0 last:pb-0">
-                <div className="w-9 h-9 rounded-full bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-400 font-extrabold text-sm shrink-0">
-                  {idx + 1}
-                </div>
-                <div>
-                  <h4 className="text-base font-bold text-white mb-1">{st.title}</h4>
-                  <p className="text-xs md:text-sm text-slate-400 leading-relaxed">{st.desc}</p>
+              <div key={idx} className="lyr-ps-item">
+                <div className="lyr-ps-num">{idx + 1}</div>
+                <div className="lyr-ps-content">
+                  <h4>{st.title}</h4>
+                  <p>{st.desc}</p>
                 </div>
               </div>
             ))}
@@ -247,25 +203,17 @@ export default function ServiceDetailView(props: ServiceDetailProps) {
         </div>
       </section>
 
-      {/* RELATED SERVICES */}
-      <section className="py-16 px-6 bg-slate-50 border-t border-slate-200/60">
-        <div className="max-w-[1200px] mx-auto">
-          <h2 className="text-xl md:text-2xl font-extrabold text-slate-900 mb-8">
-            Pilihan layanan legalitas lainnya
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {/* RELATED */}
+      <section className="lyr-related">
+        <div className="lyr-related-inner">
+          <h2>Pilihan layanan legalitas lainnya</h2>
+          <div className="lyr-related-grid">
             {related.map((rel, idx) => (
-              <Link
-                key={idx}
-                href={`/${rel.slug}`}
-                className="bg-white border border-slate-200 rounded-2xl p-5 flex items-center gap-4 hover:border-blue-500 hover:-translate-y-0.5 hover:shadow-md transition-all group"
-              >
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shrink-0" style={{ background: rel.bg }}>
-                  {rel.ico}
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{rel.name}</div>
-                  <div className="text-xs text-slate-500">{rel.price} →</div>
+              <Link key={idx} href={`/${rel.slug}`} className="lyr-rel-card">
+                <div className="lyr-rel-ico" style={{ background: rel.bg }}>{rel.ico}</div>
+                <div className="lyr-rel-text">
+                  <strong>{rel.name}</strong>
+                  <span>{rel.price} →</span>
                 </div>
               </Link>
             ))}
@@ -273,31 +221,15 @@ export default function ServiceDetailView(props: ServiceDetailProps) {
         </div>
       </section>
 
-      {/* CTA BANNER */}
-      <section className="py-20 px-6 bg-gradient-to-br from-blue-900 via-slate-900 to-blue-950 text-white text-center">
-        <div className="max-w-[700px] mx-auto">
-          <span className="text-xs font-extrabold uppercase tracking-widest text-blue-400 mb-3 block">Mulai Hari Ini</span>
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-4 leading-tight">
-            Siap mendirikan {title}?
-          </h2>
-          <p className="text-slate-300 text-sm md:text-base mb-8 leading-relaxed">
-            Tim Resmiin siap mendampingi seluruh kebutuhan legalitas bisnis Anda dengan jaminan resmi &amp; garansi proses.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={waUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="px-8 py-3.5 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/30"
-            >
-              Chat WhatsApp
-            </a>
-            <a
-              href="mailto:info@resmiin.com"
-              className="px-8 py-3.5 bg-white/10 text-white rounded-xl font-bold hover:bg-white/20 transition-all border border-white/20"
-            >
-              Kirim Email
-            </a>
+      {/* CTA FINAL */}
+      <section className="cta-section">
+        <div className="cta-inner">
+          <span className="cta-label">Mulai Hari Ini</span>
+          <h2>Siap mendirikan {title}?</h2>
+          <p>Hubungi tim Resmiin untuk proses pembuatan {title} yang cepat &amp; terpercaya.</p>
+          <div className="cta-btns">
+            <a href={waUrl} className="cta-btn-wa" target="_blank" rel="noreferrer">Chat WhatsApp</a>
+            <a href="mailto:info@resmiin.com" className="cta-btn-email">Kirim Email</a>
           </div>
         </div>
       </section>

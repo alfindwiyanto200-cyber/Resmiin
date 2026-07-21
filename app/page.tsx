@@ -1,179 +1,169 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function HomePage() {
+  const [heroLoaded, setHeroLoaded] = useState(false);
+
+  useEffect(() => {
+    setHeroLoaded(true);
+  }, []);
+
   return (
-    <div className="bg-white">
-      
-      {/* HERO SECTION */}
-      <section className="relative min-h-[90vh] flex items-center justify-start bg-slate-900 text-white px-6 overflow-hidden">
-        {/* Background image & gradient overlay */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-luminosity scale-105 transition-transform duration-1000"
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80')` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
+    <>
+      {/* ===== HERO — FULLSCREEN IMAGE ===== */}
+      <section className="hero" id="hero">
+        <div className={`hero-img-layer ${heroLoaded ? 'loaded' : ''}`} id="heroBg"></div>
+        <div className="hero-overlay"></div>
 
-        <div className="relative max-w-[1200px] mx-auto w-full py-20">
-          <div className="max-w-[640px]">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight mb-6">
-              Bangun bisnis<br/>
-              Anda secara<br/>
-              <span className="text-blue-400">resmi di sini</span>
-            </h1>
-            <p className="text-lg md:text-xl text-slate-300 font-normal leading-relaxed mb-8">
-              Pendirian perusahaan, perizinan, dan konsultasi bisnis — semua dalam satu tempat yang terpercaya.
-            </p>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-8">
-              <Link href="#layanan-unggulan" className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-base transition-all shadow-lg shadow-blue-600/40">
-                Mulai sekarang
-              </Link>
-            </div>
-            <div className="flex items-center gap-2 text-xs text-slate-400">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              <span>Konsultasi gratis, tanpa komitmen</span>
-            </div>
+        <div className="hero-text-wrap">
+          <h1 className="hero-h1">Bangun bisnis<br/>Anda secara<br/>resmi di sini</h1>
+          <p className="hero-sub">Pendirian perusahaan, perizinan, dan konsultasi<br/>bisnis — semua dalam satu tempat yang terpercaya.</p>
+          <a href="#layanan-unggulan" className="btn-hero">Mulai sekarang</a>
+          <div className="hero-guarantee">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Konsultasi gratis, tanpa komitmen
           </div>
         </div>
       </section>
 
-      {/* 2 FEATURED BOXES */}
-      <section id="layanan-unggulan" className="py-20 px-6 max-w-[1200px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
-          {/* BOX 1 */}
-          <Link href="#harga" className="group relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 rounded-3xl p-8 md:p-12 text-white overflow-hidden shadow-xl hover:-translate-y-1 transition-all">
-            <div className="relative z-10">
-              <h2 className="text-2xl sm:text-3xl font-extrabold mb-4 leading-tight">
-                Pendirian &amp; legalitas<br/>bisnis Anda
-              </h2>
-              <p className="text-blue-100 text-sm md:text-base leading-relaxed mb-8 opacity-90 max-w-[420px]">
-                Layanan pendirian PT, CV, yayasan dan pengurusan perizinan lengkap dengan proses cepat dan transparan.
-              </p>
-              <div>
-                <span className="block text-xs font-semibold text-blue-200 uppercase tracking-wider mb-1">Mulai dari</span>
-                <span className="text-3xl font-extrabold text-white">Rp 1.000.000</span>
+      {/* ===== 2 BOX LAYANAN UNGGULAN ===== */}
+      <section className="featured-section" id="layanan-unggulan">
+        <div className="featured-wrap">
+          <a href="#harga" className="feat-box feat-box--left" id="feat-box-1">
+            <div className="feat-box-content">
+              <h2 className="feat-title">Pendirian &amp; legalitas<br/>bisnis Anda</h2>
+              <p className="feat-desc">Layanan pendirian PT, CV, yayasan dan pengurusan perizinan lengkap dengan proses cepat dan transparan.</p>
+              <div className="feat-price-row">
+                <span className="feat-label">Mulai dari</span>
+                <span className="feat-price">Rp 1.000.000</span>
               </div>
             </div>
-            <div className="absolute top-8 right-8 w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-lg font-bold group-hover:bg-white/20 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
-              ↗
+            <div className="feat-arrow">↗</div>
+            <div className="feat-deco feat-deco--1"></div>
+          </a>
+
+          <Link href="/merek-haki" className="feat-box feat-box--right" id="feat-box-2">
+            <div className="feat-box-content">
+              <h2 className="feat-title">Perlindungan Merek<br/>&amp; Hak Cipta HAKI</h2>
+              <p className="feat-desc">Dapatkan Bukti Pendaftaran HAKI resmi dari DJKI untuk melindungi brand &amp; aset kekayaan intelektual bisnis Anda.</p>
+              <div className="feat-price-row">
+                <span className="feat-label">Harga Promo</span>
+                <span className="feat-price">Rp 3.500.000</span>
+              </div>
             </div>
+            <div className="feat-arrow">↗</div>
+            <div className="feat-deco feat-deco--2"></div>
           </Link>
-
-          {/* BOX 2 */}
-          <Link href="/merek-haki" className="group relative bg-gradient-to-br from-slate-900 via-purple-950 to-indigo-950 rounded-3xl p-8 md:p-12 text-white overflow-hidden shadow-xl hover:-translate-y-1 transition-all">
-            <div className="relative z-10">
-              <h2 className="text-2xl sm:text-3xl font-extrabold mb-4 leading-tight">
-                Perlindungan Merek<br/>&amp; Hak Cipta HAKI
-              </h2>
-              <p className="text-purple-100 text-sm md:text-base leading-relaxed mb-8 opacity-90 max-w-[420px]">
-                Dapatkan Bukti Pendaftaran HAKI resmi dari DJKI untuk melindungi brand &amp; aset kekayaan intelektual bisnis Anda.
-              </p>
-              <div>
-                <span className="block text-xs font-semibold text-purple-200 uppercase tracking-wider mb-1">Harga Promo</span>
-                <span className="text-3xl font-extrabold text-white">Rp 3.500.000</span>
-              </div>
-            </div>
-            <div className="absolute top-8 right-8 w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-lg font-bold group-hover:bg-white/20 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all">
-              ↗
-            </div>
-          </Link>
-
         </div>
       </section>
 
-      {/* TESTIMONI SECTION */}
-      <section className="bg-slate-50 py-20 px-6 border-y border-slate-200/60">
-        <div className="max-w-[1200px] mx-auto">
-          <div className="text-center max-w-[640px] mx-auto mb-16">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-xs font-bold text-blue-600 mb-4">
-              DI PERCAYA OLEH 2.500+ KLIEN
-            </span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
-              Apa kata pengusaha tentang Resmiin?
-            </h2>
-            <div className="flex items-center justify-center gap-2 text-sm text-slate-600">
-              <span className="font-bold text-slate-900">Sangat Memuaskan</span>
-              <span className="text-emerald-500 font-bold tracking-wider">★★★★★</span>
-              <span>4.9 / 5.0 Rating CS</span>
+      {/* ===== TESTIMONI ===== */}
+      <section className="testi-section" id="testimoni">
+        <div className="testi-header">
+          <span className="testi-badge">Dipercaya oleh</span>
+          <h2 className="testi-heading">Mereka sudah bisnis<br/>resmi, kini giliran Anda</h2>
+          <div className="testi-rating">
+            <span className="rating-word">Excellent</span>
+            <div className="stars-wrap">
+              <span className="star-icon">★</span><span className="star-icon">★</span><span className="star-icon">★</span><span className="star-icon">★</span><span className="star-icon">★</span>
             </div>
+            <a href="#" className="rating-link">2.500+ ulasan</a>
+            <span className="rating-sep">|</span>
+            <span className="rating-platform">Google &amp; Trustpilot</span>
           </div>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
-              <p className="text-slate-700 text-sm leading-relaxed mb-6 italic">
-                &ldquo;Proses pendirian PT sangat cepat, dalam 5 hari kerja semua SK Kemenkumham, NIB, dan NPWP sudah lengkap. Rekening BCA juga langsung dibantu!&rdquo;
-              </p>
-              <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
-                <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-sm">AH</div>
+        <div className="testi-track-wrap" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <div className="testi-card">
+              <div className="testi-card-logo">
+                <img src="https://ui-avatars.com/api/?name=DW&background=00695C&color=fff&size=48&bold=true&rounded=true" alt="DW" width="48" height="48" />
+              </div>
+              <p className="testi-quote">&ldquo;Proses pendirian PT sangat cepat, dalam 5 hari kerja semua SK Kemenkumham, NIB, dan NPWP sudah lengkap. Rekening BCA juga langsung dibantu!&rdquo;</p>
+              <div className="testi-tags">
+                <span className="testi-tag">Pendirian PT</span>
+                <span className="testi-tag">NIB OSS</span>
+              </div>
+              <div className="testi-author">
+                <img src="https://ui-avatars.com/api/?name=Diana+Wijaya&background=00695C&color=fff&size=36&rounded=true" alt="Diana Wijaya" width="36" height="36" />
                 <div>
-                  <div className="text-sm font-bold text-slate-900">Ahmad Hendra</div>
-                  <div className="text-xs text-slate-500">Direktur Utama, PT Hendra Karya</div>
+                  <strong>Diana Wijaya</strong>
+                  <span>Direktur, CV Wijaya Makmur</span>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
-              <p className="text-slate-700 text-sm leading-relaxed mb-6 italic">
-                &ldquo;Konsultasi awal gratisnya sangat mencerahkan. Tim Resmiin transparan memberi arahan legalitas yang paling tepat untuk skala bisnis kami.&rdquo;
-              </p>
-              <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
-                <div className="w-10 h-10 rounded-full bg-purple-600 text-white flex items-center justify-center font-bold text-sm">DW</div>
+            <div className="testi-card">
+              <div className="testi-card-logo">
+                <img src="https://ui-avatars.com/api/?name=RP&background=6D28D9&color=fff&size=48&bold=true&rounded=true" alt="RP" width="48" height="48" />
+              </div>
+              <p className="testi-quote">&ldquo;Konsultasi gratis yang diberikan sangat membantu saya memahami struktur bisnis yang tepat. Mereka memberikan solusi terbaik, bukan yang paling mahal.&rdquo;</p>
+              <div className="testi-tags">
+                <span className="testi-tag">Konsultasi</span>
+                <span className="testi-tag">Pendirian CV</span>
+              </div>
+              <div className="testi-author">
+                <img src="https://ui-avatars.com/api/?name=Rino+Pratama&background=6D28D9&color=fff&size=36&rounded=true" alt="Rino Pratama" width="36" height="36" />
                 <div>
-                  <div className="text-sm font-bold text-slate-900">Diana Wijaya</div>
-                  <div className="text-xs text-slate-500">Founder, CV Wijaya Makmur</div>
+                  <strong>Rino Pratama</strong>
+                  <span>Entrepreneur, Pratama Group</span>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
-              <p className="text-slate-700 text-sm leading-relaxed mb-6 italic">
-                &ldquo;Pendaftaran merek HAKI keluar bukti pendaftarannya hanya 1 hari kerja. Sangat profesional &amp; tanpa biaya tersembunyi.&rdquo;
-              </p>
-              <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
-                <div className="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-sm">RP</div>
+            <div className="testi-card">
+              <div className="testi-card-logo">
+                <img src="https://ui-avatars.com/api/?name=LS&background=0284C7&color=fff&size=48&bold=true&rounded=true" alt="LS" width="48" height="48" />
+              </div>
+              <p className="testi-quote">&ldquo;Dari pendirian PT hingga pengurusan perizinan, Resmiin selalu memberikan hasil yang memuaskan. Tim mereka sangat kompeten dan komunikatif.&rdquo;</p>
+              <div className="testi-tags">
+                <span className="testi-tag">Pendirian PT</span>
+                <span className="testi-tag">Perizinan</span>
+              </div>
+              <div className="testi-author">
+                <img src="https://ui-avatars.com/api/?name=Linda+Santoso&background=0284C7&color=fff&size=36&rounded=true" alt="Linda Santoso" width="36" height="36" />
                 <div>
-                  <div className="text-sm font-bold text-slate-900">Rino Pratama</div>
-                  <div className="text-xs text-slate-500">CEO, Pratama Group</div>
+                  <strong>Linda Santoso</strong>
+                  <span>CEO, PT Linda Kreasi</span>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* VISI MISI SECTION */}
-      <section id="visi-misi" className="bg-slate-900 text-white py-24 px-6">
-        <div className="max-w-[1200px] mx-auto">
-          <div className="text-center max-w-[640px] mx-auto mb-16">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-blue-400 mb-3 block">Tentang Resmiin</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold leading-tight">Visi &amp; Misi kami</h2>
-          </div>
+      {/* ===== VISI MISI ===== */}
+      <section className="vm-section" id="visi-misi">
+        <div className="vm-container">
+          <div className="vm-label">Tentang Resmiin</div>
+          <h2 className="vm-heading">Visi &amp; Misi kami</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="bg-slate-800/60 border border-slate-700/60 rounded-3xl p-8 md:p-10">
-              <div className="text-4xl mb-4">🎯</div>
-              <h3 className="text-2xl font-bold mb-4 text-white">Visi</h3>
-              <p className="text-slate-300 leading-relaxed text-base">
-                Menjadi <strong className="text-blue-400">Business Infrastructure Partner</strong> paling terpercaya di Indonesia yang membantu perusahaan membangun fondasi yang kuat, bertumbuh secara berkelanjutan, dan memberikan dampak positif bagi perekonomian bangsa.
-              </p>
+          <div className="vm-grid">
+            <div className="vm-visi">
+              <div className="vm-icon">🎯</div>
+              <h3>Visi</h3>
+              <p>Menjadi <strong>Business Infrastructure Partner</strong> paling terpercaya di Indonesia yang membantu perusahaan membangun fondasi yang kuat, bertumbuh secara berkelanjutan, dan memberikan dampak positif bagi perekonomian bangsa.</p>
             </div>
 
-            <div className="bg-slate-800/60 border border-slate-700/60 rounded-3xl p-8 md:p-10">
-              <div className="text-4xl mb-4">🚀</div>
-              <h3 className="text-2xl font-bold mb-4 text-white">Misi</h3>
-              <ul className="space-y-4 text-sm md:text-base text-slate-300">
-                <li className="flex gap-3">
-                  <span className="w-2 h-2 rounded-full bg-blue-400 mt-2 shrink-0" />
-                  <span>Menyediakan layanan profesional yang terintegrasi untuk mendukung setiap tahap perjalanan bisnis.</span>
+            <div className="vm-misi">
+              <div className="vm-icon">🚀</div>
+              <h3>Misi</h3>
+              <ul>
+                <li>
+                  <div className="vm-dot"></div>
+                  <p>Menyediakan layanan profesional yang terintegrasi untuk mendukung setiap tahap perjalanan bisnis, mulai dari pendirian, operasional, pengembangan, hingga ekspansi perusahaan.</p>
                 </li>
-                <li className="flex gap-3">
-                  <span className="w-2 h-2 rounded-full bg-blue-400 mt-2 shrink-0" />
-                  <span>Membangun standar layanan yang <strong className="text-blue-300">transparan, akurat, dan tepat waktu</strong>.</span>
+                <li>
+                  <div className="vm-dot"></div>
+                  <p>Membangun standar layanan yang <strong>transparan, akurat, tepat waktu</strong>, dan berorientasi pada solusi sehingga setiap klien memperoleh kepastian dalam setiap proses bisnisnya.</p>
                 </li>
-                <li className="flex gap-3">
-                  <span className="w-2 h-2 rounded-full bg-blue-400 mt-2 shrink-0" />
-                  <span>Mengembangkan tim profesional dengan integritas tinggi sebagai mitra strategis bisnis Anda.</span>
+                <li>
+                  <div className="vm-dot"></div>
+                  <p>Mengembangkan tim profesional dengan kompetensi multidisiplin, integritas tinggi, dan pola pikir sebagai mitra strategis bagi setiap klien.</p>
                 </li>
               </ul>
             </div>
@@ -181,161 +171,125 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PRICING SECTION (#harga) */}
-      <section id="harga" className="py-24 px-6 max-w-[1200px] mx-auto">
-        <div className="text-center max-w-[640px] mx-auto mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-xs font-extrabold text-blue-600 mb-4 uppercase tracking-wider">
-            HARGA TRANSPARAN
-          </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-4">
-            Pilih paket yang<br/>sesuai kebutuhan Anda
-          </h2>
-          <p className="text-slate-500 text-base">Harga terjangkau dengan layanan premium. Tanpa biaya tersembunyi.</p>
-        </div>
+      {/* ===== HARGA ===== */}
+      <section className="pricing-section" id="harga">
+        <div className="pricing-container">
+          <div className="pricing-badge">Harga Transparan</div>
+          <h2 className="pricing-heading">Pilih paket yang<br/>sesuai kebutuhan Anda</h2>
+          <p className="pricing-sub">Harga terjangkau dengan layanan premium. Tanpa biaya tersembunyi.</p>
 
-        {/* 6 OFFICIAL PRICING CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-          
-          {/* 1. PT PERORANGAN */}
-          <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between h-full">
-            <div>
-              <span className="text-xs font-extrabold text-slate-400 uppercase tracking-wider block mb-2">Usaha Mikro</span>
-              <div className="text-3xl mb-3">👤</div>
-              <h3 className="text-xl font-extrabold text-slate-900 mb-2">PT Perorangan</h3>
-              <p className="text-xs text-slate-500 mb-6">Legalitas resmi untuk usaha perorangan cepat &amp; mudah.</p>
-              <div className="mb-6">
-                <span className="text-3xl font-extrabold text-slate-900">Rp 1.000.000</span>
+          <div className="pricing-cards">
+
+            {/* PT PERORANGAN */}
+            <div className="pc">
+              <div className="pc-label">Usaha Mikro</div>
+              <div className="pc-icon">👤</div>
+              <h3 style={{ fontSize: '20px', fontWeight: 800, marginBottom: '6px' }}>PT Perorangan</h3>
+              <p className="pc-desc">Legalitas resmi untuk usaha perorangan cepat &amp; mudah.</p>
+              <div className="pc-price-area">
+                <span className="pc-main">Rp 1.000.000</span>
               </div>
-              <ul className="space-y-3 text-sm text-slate-700 mb-8 border-t border-slate-100 pt-6">
-                <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> SK Kemenkumham</li>
-                <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> NPWP Perusahaan</li>
-                <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> NIB (Nomor Induk Berusaha)</li>
+              <Link href="/pt-perorangan" className="pc-btn">Pilih Paket</Link>
+              <ul className="pc-feats">
+                <li><span className="ck">✓</span> SK Kemenkumham</li>
+                <li><span className="ck">✓</span> NPWP Perusahaan</li>
+                <li><span className="ck">✓</span> NIB (Nomor Induk Berusaha)</li>
               </ul>
             </div>
-            <Link href="/pt-perorangan" className="block text-center py-3 px-6 rounded-xl font-bold bg-slate-100 text-slate-800 hover:bg-blue-600 hover:text-white transition-all">
-              Pilih Paket
-            </Link>
-          </div>
 
-          {/* 2. PENDIRIAN CV (PROMO) */}
-          <div className="bg-white border border-emerald-300 rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between h-full relative">
-            <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-emerald-600 text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
-              🔥 Harga Promo
-            </span>
-            <div>
-              <span className="text-xs font-extrabold text-emerald-600 uppercase tracking-wider block mb-2">Usaha Kecil &amp; Menengah</span>
-              <div className="text-3xl mb-3">📋</div>
-              <h3 className="text-xl font-extrabold text-slate-900 mb-2">Pendirian CV</h3>
-              <p className="text-xs text-slate-500 mb-6">Paket lengkap pendirian CV dengan fasilitas buka rekening bank.</p>
-              <div className="mb-6">
-                <span className="line-through text-slate-400 text-sm font-semibold block">Rp 4.500.000</span>
-                <span className="text-3xl font-extrabold text-blue-600">Rp 3.000.000</span>
+            {/* PENDIRIAN CV (PROMO) */}
+            <div className="pc">
+              <div className="pc-featured-label" style={{ background: 'linear-gradient(135deg, #00C98D, #059669)' }}>🔥 Harga Promo</div>
+              <div className="pc-icon">📋</div>
+              <h3 style={{ fontSize: '20px', fontWeight: 800, marginBottom: '6px' }}>Pendirian CV</h3>
+              <p className="pc-desc">Paket lengkap pendirian CV dengan fasilitas buka rekening bank.</p>
+              <div className="pc-price-area">
+                <span className="pc-old">Rp 4.500.000</span>
+                <span className="pc-main">Rp 3.000.000</span>
               </div>
-              <ul className="space-y-3 text-sm text-slate-700 mb-8 border-t border-slate-100 pt-6">
-                <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> Salinan Akta Pendirian CV</li>
-                <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> SK Kemenkumham</li>
-                <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> NPWP Perusahaan</li>
-                <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> NIB (Nomor Induk Berusaha)</li>
-                <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> Buka Rekening BCA / Mandiri</li>
+              <Link href="/pendirian-cv" className="pc-btn">Pilih Paket</Link>
+              <ul className="pc-feats">
+                <li><span className="ck">✓</span> Salinan Akta Pendirian CV</li>
+                <li><span className="ck">✓</span> SK Kemenkumham</li>
+                <li><span className="ck">✓</span> NPWP Perusahaan</li>
+                <li><span className="ck">✓</span> NIB (Nomor Induk Berusaha)</li>
+                <li><span className="ck">✓</span> Buka Rekening BCA / Mandiri</li>
               </ul>
             </div>
-            <Link href="/pendirian-cv" className="block text-center py-3 px-6 rounded-xl font-bold bg-blue-600 text-white hover:bg-blue-700 transition-all shadow-md">
-              Pilih Paket
-            </Link>
-          </div>
 
-          {/* 3. PENDIRIAN PT (FEATURED TERLARIS) */}
-          <div className="bg-slate-900 text-white border-2 border-blue-500 rounded-3xl p-8 shadow-2xl flex flex-col justify-between h-full relative md:-translate-y-3">
-            <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
-              ✦ Terlaris · Hemat Rp 1,5 Juta
-            </span>
-            <div>
-              <span className="text-xs font-extrabold text-blue-400 uppercase tracking-wider block mb-2">Perseroan Terbatas</span>
-              <div className="text-3xl mb-3">🏢</div>
-              <h3 className="text-2xl font-extrabold text-white mb-2">Pendirian PT</h3>
-              <p className="text-xs text-slate-300 mb-6">Paket lengkap pendirian Perseroan Terbatas dengan fasilitas Buka Rekening.</p>
-              <div className="mb-6">
-                <span className="line-through text-slate-400 text-sm font-semibold block">Rp 6.000.000</span>
-                <span className="text-3xl font-extrabold text-white">Rp 4.500.000</span>
+            {/* PENDIRIAN PT (PROMO - FEATURED) */}
+            <div className="pc pc--featured">
+              <div className="pc-featured-label">✦ Terlaris · Hemat Rp 1,5 Juta</div>
+              <div className="pc-icon">🏢</div>
+              <h3 style={{ fontSize: '22px', fontWeight: 800, color: '#fff', marginBottom: '6px' }}>Pendirian PT</h3>
+              <p className="pc-desc" style={{ color: 'rgba(255,255,255,.8)' }}>Paket lengkap pendirian Perseroan Terbatas dengan fasilitas Buka Rekening.</p>
+              <div className="pc-price-area">
+                <span className="pc-old" style={{ color: 'rgba(255,255,255,.6)' }}>Rp 6.000.000</span>
+                <span className="pc-main" style={{ color: '#fff' }}>Rp 4.500.000</span>
               </div>
-              <ul className="space-y-3 text-sm text-slate-200 mb-8 border-t border-slate-800 pt-6">
-                <li className="flex items-center gap-2"><span className="text-blue-400 font-bold">✓</span> Salinan Akta Pendirian PT</li>
-                <li className="flex items-center gap-2"><span className="text-blue-400 font-bold">✓</span> SK Kemenkumham</li>
-                <li className="flex items-center gap-2"><span className="text-blue-400 font-bold">✓</span> NPWP Perusahaan</li>
-                <li className="flex items-center gap-2"><span className="text-blue-400 font-bold">✓</span> NIB (Nomor Induk Berusaha)</li>
-                <li className="flex items-center gap-2"><span className="text-blue-400 font-bold">✓</span> Buka Rekening BCA / Mandiri</li>
+              <Link href="/pendirian-pt" className="pc-btn pc-btn--white">Pilih Paket</Link>
+              <ul className="pc-feats">
+                <li><span className="ck" style={{ color: '#93C5FD' }}>✓</span> Salinan Akta Pendirian PT</li>
+                <li><span className="ck" style={{ color: '#93C5FD' }}>✓</span> SK Kemenkumham</li>
+                <li><span className="ck" style={{ color: '#93C5FD' }}>✓</span> NPWP Perusahaan</li>
+                <li><span className="ck" style={{ color: '#93C5FD' }}>✓</span> NIB (Nomor Induk Berusaha)</li>
+                <li><span className="ck" style={{ color: '#93C5FD' }}>✓</span> Buka Rekening BCA / Mandiri</li>
               </ul>
             </div>
-            <Link href="/pendirian-pt" className="block text-center py-3.5 px-6 rounded-xl font-bold bg-blue-600 text-white hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/40">
-              Pilih Paket
-            </Link>
-          </div>
 
-          {/* 4. PENDIRIAN YAYASAN */}
-          <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between h-full">
-            <div>
-              <span className="text-xs font-extrabold text-slate-400 uppercase tracking-wider block mb-2">Organisasi</span>
-              <div className="text-3xl mb-3">🏛️</div>
-              <h3 className="text-xl font-extrabold text-slate-900 mb-2">Pendirian Yayasan</h3>
-              <p className="text-xs text-slate-500 mb-6">Legalitas resmi organisasi sosial, kemanusiaan, &amp; keagamaan.</p>
-              <div className="mb-6">
-                <span className="line-through text-slate-400 text-sm font-semibold block">Rp 5.000.000</span>
-                <span className="text-3xl font-extrabold text-slate-900">Rp 3.000.000</span>
+            {/* YAYASAN */}
+            <div className="pc">
+              <div className="pc-label">Organisasi</div>
+              <div className="pc-icon">🏛️</div>
+              <h3 style={{ fontSize: '20px', fontWeight: 800, marginBottom: '6px' }}>Pendirian Yayasan</h3>
+              <p className="pc-desc">Legalitas resmi organisasi sosial, kemanusiaan, &amp; keagamaan.</p>
+              <div className="pc-price-area">
+                <span className="pc-old">Rp 5.000.000</span>
+                <span className="pc-main">Rp 3.000.000</span>
               </div>
-              <ul className="space-y-3 text-sm text-slate-700 mb-8 border-t border-slate-100 pt-6">
-                <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> Salinan Pendirian Yayasan</li>
-                <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> SK Kemenkumham</li>
+              <Link href="/pendirian-yayasan" className="pc-btn">Pilih Paket</Link>
+              <ul className="pc-feats">
+                <li><span className="ck">✓</span> Salinan Pendirian Yayasan</li>
+                <li><span className="ck">✓</span> SK Kemenkumham</li>
               </ul>
             </div>
-            <Link href="/pendirian-yayasan" className="block text-center py-3 px-6 rounded-xl font-bold bg-slate-100 text-slate-800 hover:bg-blue-600 hover:text-white transition-all">
-              Pilih Paket
-            </Link>
-          </div>
 
-          {/* 5. PENDIRIAN PERKUMPULAN */}
-          <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between h-full">
-            <div>
-              <span className="text-xs font-extrabold text-slate-400 uppercase tracking-wider block mb-2">Komunitas / Asosiasi</span>
-              <div className="text-3xl mb-3">🤝</div>
-              <h3 className="text-xl font-extrabold text-slate-900 mb-2">Pendirian Perkumpulan</h3>
-              <p className="text-xs text-slate-500 mb-6">Badan hukum berbasis keanggotaan untuk asosiasi &amp; himpunan.</p>
-              <div className="mb-6">
-                <span className="line-through text-slate-400 text-sm font-semibold block">Rp 5.000.000</span>
-                <span className="text-3xl font-extrabold text-slate-900">Rp 3.000.000</span>
+            {/* PERKUMPULAN */}
+            <div className="pc">
+              <div className="pc-label">Komunitas / Asosiasi</div>
+              <div className="pc-icon">🤝</div>
+              <h3 style={{ fontSize: '20px', fontWeight: 800, marginBottom: '6px' }}>Pendirian Perkumpulan</h3>
+              <p className="pc-desc">Badan hukum berbasis keanggotaan untuk asosiasi &amp; himpunan.</p>
+              <div className="pc-price-area">
+                <span className="pc-old">Rp 5.000.000</span>
+                <span className="pc-main">Rp 3.000.000</span>
               </div>
-              <ul className="space-y-3 text-sm text-slate-700 mb-8 border-t border-slate-100 pt-6">
-                <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> Salinan Akta Perkumpulan</li>
-                <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> SK Kemenkumham</li>
+              <Link href="/pendirian-perkumpulan" className="pc-btn">Pilih Paket</Link>
+              <ul className="pc-feats">
+                <li><span className="ck">✓</span> Salinan Akta Perkumpulan</li>
+                <li><span className="ck">✓</span> SK Kemenkumham</li>
               </ul>
             </div>
-            <Link href="/pendirian-perkumpulan" className="block text-center py-3 px-6 rounded-xl font-bold bg-slate-100 text-slate-800 hover:bg-blue-600 hover:text-white transition-all">
-              Pilih Paket
-            </Link>
-          </div>
 
-          {/* 6. MEREK & HAKI */}
-          <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between h-full">
-            <div>
-              <span className="text-xs font-extrabold text-slate-400 uppercase tracking-wider block mb-2">Perlindungan Merek</span>
-              <div className="text-3xl mb-3">🛡️</div>
-              <h3 className="text-xl font-extrabold text-slate-900 mb-2">Merek &amp; HAKI</h3>
-              <p className="text-xs text-slate-500 mb-6">Perlindungan hukum nama brand, logo, &amp; hak cipta bisnis Anda.</p>
-              <div className="mb-6">
-                <span className="line-through text-slate-400 text-sm font-semibold block">Rp 4.500.000</span>
-                <span className="text-3xl font-extrabold text-slate-900">Rp 3.500.000</span>
+            {/* MEREK HAKI */}
+            <div className="pc">
+              <div className="pc-label">Perlindungan Merek</div>
+              <div className="pc-icon">🛡️</div>
+              <h3 style={{ fontSize: '20px', fontWeight: 800, marginBottom: '6px' }}>Merek &amp; HAKI</h3>
+              <p className="pc-desc">Perlindungan hukum nama brand, logo, &amp; hak cipta bisnis Anda.</p>
+              <div className="pc-price-area">
+                <span className="pc-old">Rp 4.500.000</span>
+                <span className="pc-main">Rp 3.500.000</span>
               </div>
-              <ul className="space-y-3 text-sm text-slate-700 mb-8 border-t border-slate-100 pt-6">
-                <li className="flex items-center gap-2"><span className="text-blue-600 font-bold">✓</span> Bukti Pendaftaran HAKI</li>
+              <Link href="/merek-haki" className="pc-btn">Pilih Paket</Link>
+              <ul className="pc-feats">
+                <li><span className="ck">✓</span> Bukti Pendaftaran HAKI</li>
               </ul>
             </div>
-            <Link href="/merek-haki" className="block text-center py-3 px-6 rounded-xl font-bold bg-slate-100 text-slate-800 hover:bg-blue-600 hover:text-white transition-all">
-              Pilih Paket
-            </Link>
-          </div>
 
+          </div>
         </div>
       </section>
-
-    </div>
+    </>
   );
 }

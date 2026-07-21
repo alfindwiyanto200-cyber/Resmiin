@@ -1,211 +1,170 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const closeTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const handleMouseEnter = (name: string) => {
-    if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
-    setActiveDropdown(name);
-  };
-
-  const handleMouseLeave = () => {
-    closeTimerRef.current = setTimeout(() => {
-      setActiveDropdown(null);
-    }, 150);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all duration-200">
-      <div className="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
-        
-        {/* LOGO */}
-        <Link href="/" className="flex items-center gap-2">
-          <img src="/logo.png" alt="Resmiin" className="h-8 w-auto object-contain" />
-        </Link>
-
-        {/* DESKTOP MENU */}
-        <nav className="hidden md:flex items-center gap-8 text-[14.5px] font-semibold text-slate-700">
-          <Link href="/#harga" className="hover:text-blue-600 transition-colors">
-            Harga
+    <>
+      <header className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar">
+        <div className="nav-inner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', maxWidth: '1200px', margin: '0 auto', padding: '0 24px', height: '68px' }}>
+          <Link href="/" className="nav-logo-wrap">
+            <img src="/logo.png" alt="Resmiin" className="nav-logo" style={{ height: '32px', width: 'auto', objectFit: 'contain' }} />
           </Link>
 
-          {/* MEGA DROPDOWN: LAYANAN */}
-          <div
-            className="relative"
-            onMouseEnter={() => handleMouseEnter('layanan')}
-            onMouseLeave={handleMouseLeave}
-          >
-            <button className="flex items-center gap-1.5 hover:text-blue-600 transition-colors py-5 focus:outline-none">
-              <span>Layanan</span>
-              <svg width="11" height="11" viewBox="0 0 12 12" className={`transition-transform duration-200 ${activeDropdown === 'layanan' ? 'rotate-180 text-blue-600' : ''}`}>
-                <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
-              </svg>
-            </button>
+          <nav className="nav-menu" id="navMenu">
+            <Link href="/#harga" className="nav-item">Harga</Link>
 
-            {/* MEGA DROPDOWN PANEL */}
-            {activeDropdown === 'layanan' && (
-              <div 
-                className="fixed top-16 left-0 right-0 w-full bg-white border-b border-slate-200 shadow-xl py-8 px-6 transition-all animate-fade-in"
-                onMouseEnter={() => handleMouseEnter('layanan')}
-                onMouseLeave={handleMouseLeave}
-              >
-                <div className="max-w-[1200px] mx-auto grid grid-cols-3 gap-8">
-                  
-                  {/* COL 1: BADAN USASA */}
-                  <div className="border-r border-slate-100 pr-6">
-                    <p className="text-[10px] font-extrabold tracking-widest text-slate-400 uppercase mb-4 pb-2 border-b border-slate-100">
-                      BADAN USASA &amp; PT
-                    </p>
-                    <Link href="/pt-perorangan" className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition-all group">
-                      <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-lg shrink-0">👤</div>
-                      <div>
-                        <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">PT Perorangan</div>
-                        <div className="text-xs text-slate-500">SK Kemenkumham, NPWP, NIB • <strong className="text-slate-800">Rp 1.000.000</strong></div>
+            {/* MEGA DROPDOWN: LAYANAN */}
+            <div className="nav-item has-dropdown mega-dropdown-wrap">
+              <span className="nav-item-label">
+                Layanan{' '}
+                <svg width="11" height="11" viewBox="0 0 12 12">
+                  <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" fill="none" />
+                </svg>
+              </span>
+              <div className="nav-dropdown mega-dropdown">
+                <div className="mega-cols">
+                  {/* BADAN USASA */}
+                  <div className="mega-col">
+                    <p className="mega-head">BADAN USASA &amp; PT</p>
+                    <Link href="/pt-perorangan" className="mega-item">
+                      <div className="mega-ico" style={{ background: '#EBF5FF' }}>👤</div>
+                      <div className="mega-text">
+                        <span className="mega-name">PT Perorangan</span>
+                        <span className="mega-desc">SK Kemenkumham, NPWP, NIB • <strong>Rp 1.000.000</strong></span>
                       </div>
                     </Link>
-                    <Link href="/pendirian-cv" className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition-all group mt-1">
-                      <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-lg shrink-0">📋</div>
-                      <div>
-                        <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors flex items-center gap-2">
-                          Pendirian CV <span className="text-[9px] font-extrabold bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">PROMO</span>
-                        </div>
-                        <div className="text-xs text-slate-500">Akta, SK, NPWP, NIB, Rekening • <strong className="text-slate-800">Rp 3.000.000</strong></div>
+                    <Link href="/pendirian-cv" className="mega-item">
+                      <div className="mega-ico" style={{ background: '#F0FDF4' }}>📋</div>
+                      <div className="mega-text">
+                        <span className="mega-name">
+                          Pendirian CV <span className="mega-badge mega-badge--green">PROMO</span>
+                        </span>
+                        <span className="mega-desc">Akta, SK, NPWP, NIB, Buka Rekening • <strong>Rp 3.000.000</strong></span>
                       </div>
                     </Link>
-                    <Link href="/pendirian-pt" className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition-all group mt-1">
-                      <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-lg shrink-0">🏢</div>
-                      <div>
-                        <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors flex items-center gap-2">
-                          Pendirian PT <span className="text-[9px] font-extrabold bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full uppercase">TERLARIS</span>
-                        </div>
-                        <div className="text-xs text-slate-500">Akta, SK, NPWP, NIB, Rekening • <strong className="text-slate-800">Rp 4.500.000</strong></div>
+                    <Link href="/pendirian-pt" className="mega-item">
+                      <div className="mega-ico" style={{ background: '#EBF5FF' }}>🏢</div>
+                      <div className="mega-text">
+                        <span className="mega-name">
+                          Pendirian PT <span className="mega-badge">TERLARIS</span>
+                        </span>
+                        <span className="mega-desc">Akta, SK, NPWP, NIB, Buka Rekening • <strong>Rp 4.500.000</strong></span>
                       </div>
                     </Link>
                   </div>
 
-                  {/* COL 2: ORGANISASI */}
-                  <div className="border-r border-slate-100 pr-6">
-                    <p className="text-[10px] font-extrabold tracking-widest text-slate-400 uppercase mb-4 pb-2 border-b border-slate-100">
-                      ORGANISASI &amp; NIRLABA
-                    </p>
-                    <Link href="/pendirian-yayasan" className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition-all group">
-                      <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-lg shrink-0">🏛️</div>
-                      <div>
-                        <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors flex items-center gap-2">
-                          Pendirian Yayasan <span className="text-[9px] font-extrabold bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">PROMO</span>
-                        </div>
-                        <div className="text-xs text-slate-500">Salinan Pendirian &amp; SK • <strong className="text-slate-800">Rp 3.000.000</strong></div>
+                  {/* ORGANISASI */}
+                  <div className="mega-col">
+                    <p className="mega-head">ORGANISASI &amp; NIRLABA</p>
+                    <Link href="/pendirian-yayasan" className="mega-item">
+                      <div className="mega-ico" style={{ background: '#FFF7ED' }}>🏛️</div>
+                      <div className="mega-text">
+                        <span className="mega-name">
+                          Pendirian Yayasan <span className="mega-badge mega-badge--green">PROMO</span>
+                        </span>
+                        <span className="mega-desc">Salinan Pendirian &amp; SK Kemenkumham • <strong>Rp 3.000.000</strong></span>
                       </div>
                     </Link>
-                    <Link href="/pendirian-perkumpulan" className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition-all group mt-1">
-                      <div className="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-lg shrink-0">🤝</div>
-                      <div>
-                        <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors flex items-center gap-2">
-                          Pendirian Perkumpulan <span className="text-[9px] font-extrabold bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">PROMO</span>
-                        </div>
-                        <div className="text-xs text-slate-500">Salinan Akta &amp; SK Kemenkumham • <strong className="text-slate-800">Rp 3.000.000</strong></div>
-                      </div>
-                    </Link>
-                  </div>
-
-                  {/* COL 3: HAKI */}
-                  <div>
-                    <p className="text-[10px] font-extrabold tracking-widest text-slate-400 uppercase mb-4 pb-2 border-b border-slate-100">
-                      HAK KEKAYAAN INTELEKTUAL
-                    </p>
-                    <Link href="/merek-haki" className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-slate-50 transition-all group">
-                      <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-lg shrink-0">🛡️</div>
-                      <div>
-                        <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors flex items-center gap-2">
-                          Merek &amp; HAKI <span className="text-[9px] font-extrabold bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase">PROMO</span>
-                        </div>
-                        <div className="text-xs text-slate-500">Bukti Pendaftaran HAKI Resmi • <strong className="text-slate-800">Rp 3.500.000</strong></div>
+                    <Link href="/pendirian-perkumpulan" className="mega-item">
+                      <div className="mega-ico" style={{ background: '#F5F3FF' }}>🤝</div>
+                      <div className="mega-text">
+                        <span className="mega-name">
+                          Pendirian Perkumpulan <span className="mega-badge mega-badge--green">PROMO</span>
+                        </span>
+                        <span className="mega-desc">Salinan Akta &amp; SK Kemenkumham • <strong>Rp 3.000.000</strong></span>
                       </div>
                     </Link>
                   </div>
 
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* DROPDOWN: MENGEKSPLORASI */}
-          <div
-            className="relative"
-            onMouseEnter={() => handleMouseEnter('eksplor')}
-            onMouseLeave={handleMouseLeave}
-          >
-            <button className="flex items-center gap-1.5 hover:text-blue-600 transition-colors py-5 focus:outline-none">
-              <span>Mengeksplorasi</span>
-              <svg width="11" height="11" viewBox="0 0 12 12" className={`transition-transform duration-200 ${activeDropdown === 'eksplor' ? 'rotate-180 text-blue-600' : ''}`}>
-                <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
-              </svg>
-            </button>
-
-            {activeDropdown === 'eksplor' && (
-              <div 
-                className="absolute top-16 left-1/2 -translate-x-1/2 w-96 bg-white border border-slate-200 rounded-2xl shadow-xl p-6 transition-all animate-fade-in"
-                onMouseEnter={() => handleMouseEnter('eksplor')}
-                onMouseLeave={handleMouseLeave}
-              >
-                <div className="grid grid-cols-2 gap-6">
-                  <div>
-                    <p className="text-[10px] font-extrabold tracking-widest text-slate-400 uppercase mb-3">PANDUAN</p>
-                    <Link href="/blog" className="block py-1.5 text-sm font-semibold text-blue-600 hover:underline">Blog &amp; Artikel</Link>
-                    <Link href="/pendirian-pt" className="block py-1.5 text-sm font-medium text-slate-700 hover:text-blue-600">Panduan Mendirikan PT</Link>
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-extrabold tracking-widest text-slate-400 uppercase mb-3">PERUSAHAAN</p>
-                    <Link href="/#visi-misi" className="block py-1.5 text-sm font-medium text-slate-700 hover:text-blue-600">Visi &amp; Misi</Link>
-                    <Link href="/#testimoni" className="block py-1.5 text-sm font-medium text-slate-700 hover:text-blue-600">Testimoni</Link>
+                  {/* PERLINDUNGAN BRAND */}
+                  <div className="mega-col">
+                    <p className="mega-head">HAK KEKAYAAN INTELEKTUAL</p>
+                    <Link href="/merek-haki" className="mega-item">
+                      <div className="mega-ico" style={{ background: '#EBF5FF' }}>🛡️</div>
+                      <div className="mega-text">
+                        <span className="mega-name">
+                          Merek &amp; HAKI <span className="mega-badge mega-badge--green">PROMO</span>
+                        </span>
+                        <span className="mega-desc">Bukti Pendaftaran HAKI Resmi • <strong>Rp 3.500.000</strong></span>
+                      </div>
+                    </Link>
                   </div>
                 </div>
               </div>
-            )}
-          </div>
-        </nav>
+            </div>
 
-        {/* ACTIONS */}
-        <div className="hidden md:flex items-center gap-3">
-          <a href="https://wa.me/62000000000" target="_blank" rel="noreferrer" className="px-4 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100 transition-colors">
-            Hubungi Kami
-          </a>
-          <Link href="/#harga" className="px-5 py-2.5 rounded-lg text-sm font-bold bg-blue-600 text-white hover:bg-blue-700 transition-all shadow-md shadow-blue-500/20">
-            Mulai Sekarang
-          </Link>
+            {/* DROPDOWN: MENGEKSPLORASI */}
+            <div className="nav-item has-dropdown">
+              <span className="nav-item-label">
+                Mengeksplorasi{' '}
+                <svg width="11" height="11" viewBox="0 0 12 12">
+                  <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" fill="none" />
+                </svg>
+              </span>
+              <div className="nav-dropdown">
+                <div className="dropdown-cols">
+                  <div>
+                    <p className="drop-head">PANDUAN</p>
+                    <Link href="/blog" className="drop-link">Blog &amp; Artikel</Link>
+                    <Link href="/pendirian-pt" className="drop-link">Panduan Mendirikan PT</Link>
+                  </div>
+                  <div>
+                    <p className="drop-head">PERUSAHAAN</p>
+                    <Link href="/#visi-misi" className="drop-link">Visi &amp; Misi</Link>
+                    <Link href="/#testimoni" className="drop-link">Testimoni</Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+
+          <div className="nav-actions">
+            <a href="https://wa.me/62000000000" target="_blank" rel="noreferrer" className="btn-nav-ghost">
+              Hubungi Kami
+            </a>
+            <Link href="/#harga" className="btn-nav-primary">
+              Mulai Sekarang
+            </Link>
+          </div>
+
+          <button
+            className="burger"
+            id="burger"
+            aria-label="Menu"
+            onClick={() => setMobileOpen(!mobileOpen)}
+          >
+            <span></span><span></span><span></span>
+          </button>
         </div>
+      </header>
 
-        {/* MOBILE BURGER */}
-        <button 
-          onClick={() => setMobileOpen(!mobileOpen)} 
-          className="md:hidden p-2 text-slate-700 focus:outline-none"
-          aria-label="Toggle Menu"
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            {mobileOpen ? <path d="M18 6L6 18M6 6l12 12" /> : <path d="M4 6h16M4 12h16M4 18h16" />}
-          </svg>
-        </button>
+      {/* MOBILE NAV */}
+      <div className={`mobile-nav ${mobileOpen ? 'open' : ''}`} id="mobileNav">
+        <Link href="/#harga" className="mob-link" onClick={() => setMobileOpen(false)}>Harga</Link>
+        <Link href="/pt-perorangan" className="mob-link" onClick={() => setMobileOpen(false)}>PT Perorangan (Rp 1.000.000)</Link>
+        <Link href="/pendirian-cv" className="mob-link" onClick={() => setMobileOpen(false)}>Pendirian CV (Rp 3.000.000)</Link>
+        <Link href="/pendirian-pt" className="mob-link" onClick={() => setMobileOpen(false)}>Pendirian PT (Rp 4.500.000)</Link>
+        <Link href="/pendirian-yayasan" className="mob-link" onClick={() => setMobileOpen(false)}>Pendirian Yayasan</Link>
+        <Link href="/pendirian-perkumpulan" className="mob-link" onClick={() => setMobileOpen(false)}>Pendirian Perkumpulan</Link>
+        <Link href="/merek-haki" className="mob-link" onClick={() => setMobileOpen(false)}>Merek &amp; HAKI</Link>
+        <Link href="/blog" className="mob-link" onClick={() => setMobileOpen(false)}>Blog &amp; Artikel</Link>
+        <a href="https://wa.me/62000000000" target="_blank" rel="noreferrer" className="btn-nav-primary" style={{ marginTop: '8px' }}>
+          Mulai Sekarang
+        </a>
       </div>
-
-      {/* MOBILE NAV DRAWER */}
-      {mobileOpen && (
-        <div className="md:hidden bg-white border-b border-slate-200 px-6 py-4 flex flex-col gap-3 text-base font-semibold">
-          <Link href="/#harga" onClick={() => setMobileOpen(false)} className="py-2 border-b border-slate-100">Harga</Link>
-          <Link href="/pt-perorangan" onClick={() => setMobileOpen(false)} className="py-2 border-b border-slate-100 text-blue-600">PT Perorangan (Rp 1.000.000)</Link>
-          <Link href="/pendirian-cv" onClick={() => setMobileOpen(false)} className="py-2 border-b border-slate-100 text-blue-600">Pendirian CV (Rp 3.000.000)</Link>
-          <Link href="/pendirian-pt" onClick={() => setMobileOpen(false)} className="py-2 border-b border-slate-100 text-blue-600">Pendirian PT (Rp 4.500.000)</Link>
-          <Link href="/pendirian-yayasan" onClick={() => setMobileOpen(false)} className="py-2 border-b border-slate-100">Pendirian Yayasan</Link>
-          <Link href="/pendirian-perkumpulan" onClick={() => setMobileOpen(false)} className="py-2 border-b border-slate-100">Pendirian Perkumpulan</Link>
-          <Link href="/merek-haki" onClick={() => setMobileOpen(false)} className="py-2 border-b border-slate-100">Merek &amp; HAKI</Link>
-          <Link href="/blog" onClick={() => setMobileOpen(false)} className="py-2 border-b border-slate-100">Blog &amp; Artikel</Link>
-          <a href="https://wa.me/62000000000" target="_blank" rel="noreferrer" className="mt-2 text-center py-3 rounded-lg bg-blue-600 text-white font-bold">Mulai Sekarang</a>
-        </div>
-      )}
-    </header>
+    </>
   );
 }

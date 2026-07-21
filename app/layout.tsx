@@ -15,9 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
-      <body className="antialiased min-h-screen flex flex-col justify-between">
+      <body>
         <Navbar />
-        <main className="flex-grow pt-16">
+        <main style={{ paddingTop: '68px' }}>
           {children}
         </main>
         <Footer />
