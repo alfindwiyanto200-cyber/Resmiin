@@ -75,65 +75,62 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="testi-track-wrap" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            <div className="testi-card">
-              <div className="testi-card-logo">
-                <img src="https://ui-avatars.com/api/?name=DW&background=00695C&color=fff&size=48&bold=true&rounded=true" alt="DW" width="48" height="48" />
-              </div>
-              <p className="testi-quote">&ldquo;Proses pendirian PT sangat cepat, dalam 5 hari kerja semua SK Kemenkumham, NIB, dan NPWP sudah lengkap. Rekening BCA juga langsung dibantu!&rdquo;</p>
-              <div className="testi-tags">
-                <span className="testi-tag">Pendirian PT</span>
-                <span className="testi-tag">NIB OSS</span>
-              </div>
-              <div className="testi-author">
-                <img src="https://ui-avatars.com/api/?name=Diana+Wijaya&background=00695C&color=fff&size=36&rounded=true" alt="Diana Wijaya" width="36" height="36" />
-                <div>
-                  <strong>Diana Wijaya</strong>
-                  <span>Direktur, CV Wijaya Makmur</span>
-                </div>
+        <div className="testi-grid-container">
+          <div className="testi-card">
+            <div className="testi-card-logo">
+              <img src="https://ui-avatars.com/api/?name=DW&background=00695C&color=fff&size=48&bold=true&rounded=true" alt="DW" width="48" height="48" />
+            </div>
+            <p className="testi-quote">&ldquo;Proses pendirian PT sangat cepat, dalam 5 hari kerja semua SK Kemenkumham, NIB, dan NPWP sudah lengkap. Rekening BCA juga langsung dibantu!&rdquo;</p>
+            <div className="testi-tags">
+              <span className="testi-tag">Pendirian PT</span>
+              <span className="testi-tag">NIB OSS</span>
+            </div>
+            <div className="testi-author">
+              <img src="https://ui-avatars.com/api/?name=Diana+Wijaya&background=00695C&color=fff&size=36&rounded=true" alt="Diana Wijaya" width="36" height="36" />
+              <div>
+                <strong>Diana Wijaya</strong>
+                <span>Direktur, CV Wijaya Makmur</span>
               </div>
             </div>
+          </div>
 
-            <div className="testi-card">
-              <div className="testi-card-logo">
-                <img src="https://ui-avatars.com/api/?name=RP&background=6D28D9&color=fff&size=48&bold=true&rounded=true" alt="RP" width="48" height="48" />
-              </div>
-              <p className="testi-quote">&ldquo;Konsultasi gratis yang diberikan sangat membantu saya memahami struktur bisnis yang tepat. Mereka memberikan solusi terbaik, bukan yang paling mahal.&rdquo;</p>
-              <div className="testi-tags">
-                <span className="testi-tag">Konsultasi</span>
-                <span className="testi-tag">Pendirian CV</span>
-              </div>
-              <div className="testi-author">
-                <img src="https://ui-avatars.com/api/?name=Rino+Pratama&background=6D28D9&color=fff&size=36&rounded=true" alt="Rino Pratama" width="36" height="36" />
-                <div>
-                  <strong>Rino Pratama</strong>
-                  <span>Entrepreneur, Pratama Group</span>
-                </div>
+          <div className="testi-card">
+            <div className="testi-card-logo">
+              <img src="https://ui-avatars.com/api/?name=RP&background=6D28D9&color=fff&size=48&bold=true&rounded=true" alt="RP" width="48" height="48" />
+            </div>
+            <p className="testi-quote">&ldquo;Konsultasi gratis yang diberikan sangat membantu saya memahami struktur bisnis yang tepat. Mereka memberikan solusi terbaik, bukan yang paling mahal.&rdquo;</p>
+            <div className="testi-tags">
+              <span className="testi-tag">Konsultasi</span>
+              <span className="testi-tag">Pendirian CV</span>
+            </div>
+            <div className="testi-author">
+              <img src="https://ui-avatars.com/api/?name=Rino+Pratama&background=6D28D9&color=fff&size=36&rounded=true" alt="Rino Pratama" width="36" height="36" />
+              <div>
+                <strong>Rino Pratama</strong>
+                <span>Entrepreneur, Pratama Group</span>
               </div>
             </div>
+          </div>
 
-            <div className="testi-card">
-              <div className="testi-card-logo">
-                <img src="https://ui-avatars.com/api/?name=LS&background=0284C7&color=fff&size=48&bold=true&rounded=true" alt="LS" width="48" height="48" />
-              </div>
-              <p className="testi-quote">&ldquo;Dari pendirian PT hingga pengurusan perizinan, Resmiin selalu memberikan hasil yang memuaskan. Tim mereka sangat kompeten dan komunikatif.&rdquo;</p>
-              <div className="testi-tags">
-                <span className="testi-tag">Pendirian PT</span>
-                <span className="testi-tag">Perizinan</span>
-              </div>
-              <div className="testi-author">
-                <img src="https://ui-avatars.com/api/?name=Linda+Santoso&background=0284C7&color=fff&size=36&rounded=true" alt="Linda Santoso" width="36" height="36" />
-                <div>
-                  <strong>Linda Santoso</strong>
-                  <span>CEO, PT Linda Kreasi</span>
-                </div>
+          <div className="testi-card">
+            <div className="testi-card-logo">
+              <img src="https://ui-avatars.com/api/?name=LS&background=0284C7&color=fff&size=48&bold=true&rounded=true" alt="LS" width="48" height="48" />
+            </div>
+            <p className="testi-quote">&ldquo;Dari pendirian PT hingga pengurusan perizinan, Resmiin selalu memberikan hasil yang memuaskan. Tim mereka sangat kompeten dan komunikatif.&rdquo;</p>
+            <div className="testi-tags">
+              <span className="testi-tag">Pendirian PT</span>
+              <span className="testi-tag">Perizinan</span>
+            </div>
+            <div className="testi-author">
+              <img src="https://ui-avatars.com/api/?name=Linda+Santoso&background=0284C7&color=fff&size=36&rounded=true" alt="Linda Santoso" width="36" height="36" />
+              <div>
+                <strong>Linda Santoso</strong>
+                <span>CEO, PT Linda Kreasi</span>
               </div>
             </div>
-
           </div>
         </div>
+
       </section>
 
       {/* ===== VISI MISI ===== */}

@@ -3,6 +3,12 @@ import Link from 'next/link';
 import { FALLBACK_ARTICLES } from '@/sanity/lib/client';
 import type { Metadata } from 'next';
 
+export async function generateStaticParams() {
+  return FALLBACK_ARTICLES.map((article) => ({
+    slug: article.slug.current,
+  }));
+}
+
 interface Props {
   params: Promise<{ slug: string }>;
 }
