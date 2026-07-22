@@ -55,7 +55,7 @@ export default function ServiceDetailView(props: ServiceDetailProps) {
     waMessage,
   } = props;
 
-  const waUrl = `https://wa.me/62000000000?text=${encodeURIComponent(waMessage)}`;
+  const waUrl = 'https://wa.link/cl4df1';
 
   return (
     <div>

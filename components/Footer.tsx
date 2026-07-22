@@ -18,7 +18,7 @@ export default function Footer() {
               Partner Infrastruktur &amp; Legalitas Bisnis Terpercaya di Indonesia.
             </p>
             <a 
-              href="https://wa.me/6282260092481" 
+              href="https://wa.link/cl4df1" 
               target="_blank" 
               rel="noreferrer" 
               className="footer-cta-pill"
@@ -73,12 +73,12 @@ export default function Footer() {
               <h5 className="footer-col-head">Perlu bantuan?</h5>
               <ul className="footer-links">
                 <li>
-                  <a href="https://wa.me/6282260092481" target="_blank" rel="noreferrer">
+                  <a href="https://wa.link/cl4df1" target="_blank" rel="noreferrer">
                     Hubungi Kami (WhatsApp)
                   </a>
                 </li>
                 <li>
-                  <a href="tel:082260092481">0822-6009-2481</a>
+                  <a href="https://wa.link/cl4df1" target="_blank" rel="noreferrer">0822-6009-2481</a>
                 </li>
                 <li>
                   <a href="mailto:info@resmiin.com">info@resmiin.com</a>
@@ -143,12 +143,12 @@ export default function Footer() {
 
             {/* WHATSAPP */}
             <a 
-              href="https://wa.me/6282260092481" 
+              href="https://wa.link/cl4df1" 
               target="_blank" 
               rel="noreferrer" 
               className="social-icon-circle"
               aria-label="WhatsApp"
-              title="WhatsApp 082260092481"
+              title="WhatsApp Resmiin"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>

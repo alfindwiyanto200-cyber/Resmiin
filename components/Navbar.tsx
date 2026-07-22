@@ -189,12 +189,12 @@ export default function Navbar() {
           </nav>
 
           <div className="nav-actions">
-            <a href="https://wa.me/62000000000" target="_blank" rel="noreferrer" className="btn-nav-ghost">
+            <a href="https://wa.link/cl4df1" target="_blank" rel="noreferrer" className="btn-nav-ghost">
               Hubungi Kami
             </a>
-            <Link href="/#harga" className="btn-nav-primary">
+            <a href="https://wa.link/cl4df1" target="_blank" rel="noreferrer" className="btn-nav-primary">
               Mulai Sekarang
-            </Link>
+            </a>
           </div>
 
           <button
@@ -219,7 +219,7 @@ export default function Navbar() {
         <Link href="/pendirian-perkumpulan" className="mob-link" onClick={() => setMobileOpen(false)}>Pendirian Perkumpulan</Link>
         <Link href="/merek-haki" className="mob-link" onClick={() => setMobileOpen(false)}>Merek &amp; HAKI</Link>
         <Link href="/blog" className="mob-link" onClick={() => setMobileOpen(false)}>Blog &amp; Artikel</Link>
-        <a href="https://wa.me/62000000000" target="_blank" rel="noreferrer" className="btn-nav-primary" style={{ marginTop: '8px' }}>
+        <a href="https://wa.link/cl4df1" target="_blank" rel="noreferrer" className="btn-nav-primary" style={{ marginTop: '8px' }}>
           Mulai Sekarang
         </a>
       </div>
