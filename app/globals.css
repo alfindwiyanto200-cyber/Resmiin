@@ -2156,7 +2156,7 @@ ul { list-style: none; }
 }
 
 .footer-logo-img {
-  height: 48px;
+  height: 64px;
   width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
