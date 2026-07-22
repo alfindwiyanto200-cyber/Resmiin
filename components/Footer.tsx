@@ -18,7 +18,7 @@ export default function Footer() {
               Partner Infrastruktur &amp; Legalitas Bisnis Terpercaya di Indonesia.
             </p>
             <a 
-              href="https://wa.link/cl4df1" 
+              href="https://wa.link/1c0f23" 
               target="_blank" 
               rel="noreferrer" 
               className="footer-cta-pill"
@@ -73,12 +73,12 @@ export default function Footer() {
               <h5 className="footer-col-head">Perlu bantuan?</h5>
               <ul className="footer-links">
                 <li>
-                  <a href="https://wa.link/cl4df1" target="_blank" rel="noreferrer">
+                  <a href="https://wa.link/1c0f23" target="_blank" rel="noreferrer">
                     Hubungi Kami (WhatsApp)
                   </a>
                 </li>
                 <li>
-                  <a href="https://wa.link/cl4df1" target="_blank" rel="noreferrer">0822-6009-2481</a>
+                  <a href="https://wa.link/1c0f23" target="_blank" rel="noreferrer">0822-6009-2481</a>
                 </li>
                 <li>
                   <a href="mailto:info@resmiin.com">info@resmiin.com</a>
@@ -143,7 +143,7 @@ export default function Footer() {
 
             {/* WHATSAPP */}
             <a 
-              href="https://wa.link/cl4df1" 
+              href="https://wa.link/1c0f23" 
               target="_blank" 
               rel="noreferrer" 
               className="social-icon-circle"
