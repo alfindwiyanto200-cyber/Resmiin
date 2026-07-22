@@ -77,14 +77,14 @@ ul { list-style: none; }
   gap: 8px;
 }
 
-.nav-logo-wrap { display: flex; align-items: center; overflow: visible; }
-.nav-logo { height: 72px; width: auto; object-fit: contain; transform: scale(1.65); transform-origin: left center; }
+.nav-logo-wrap { display: flex; align-items: center; min-width: 180px; margin-right: 36px; overflow: visible; }
+.nav-logo { height: 48px; width: auto; object-fit: contain; transform: scale(1.25); transform-origin: left center; }
 
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 2px;
-  margin-left: 28px;
+  gap: 4px;
+  margin-left: 0;
   flex: 1;
 }
 

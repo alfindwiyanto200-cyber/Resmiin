@@ -50,9 +50,9 @@ export default function Navbar() {
   return (
     <>
       <header className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar">
-        <div className="nav-inner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', maxWidth: '1200px', margin: '0 auto', padding: '0 24px', height: '76px' }}>
-          <Link href="/" className="nav-logo-wrap" onClick={closeDropdown} style={{ overflow: 'visible', marginRight: '20px' }}>
-            <img src="/logo.png" alt="Resmiin" className="nav-logo" style={{ height: '72px', width: 'auto', objectFit: 'contain', transform: 'scale(1.65)', transformOrigin: 'left center' }} />
+        <div className="nav-inner" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', maxWidth: '1200px', margin: '0 auto', padding: '0 24px', height: '72px' }}>
+          <Link href="/" className="nav-logo-wrap" onClick={closeDropdown} style={{ display: 'flex', alignItems: 'center', minWidth: '180px', marginRight: '36px' }}>
+            <img src="/logo.png" alt="Resmiin" className="nav-logo" style={{ height: '48px', width: 'auto', objectFit: 'contain', transform: 'scale(1.25)', transformOrigin: 'left center' }} />
           </Link>
 
           <nav className="nav-menu" id="navMenu">
