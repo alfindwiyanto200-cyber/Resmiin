@@ -77,8 +77,8 @@ ul { list-style: none; }
   gap: 8px;
 }
 
-.nav-logo-wrap { display: flex; align-items: center; }
-.nav-logo { height: 34px; width: auto; object-fit: contain; }
+.nav-logo-wrap { display: flex; align-items: center; overflow: visible; }
+.nav-logo { height: 72px; width: auto; object-fit: contain; transform: scale(1.65); transform-origin: left center; }
 
 .nav-menu {
   display: flex;
@@ -2156,10 +2156,12 @@ ul { list-style: none; }
 }
 
 .footer-logo-img {
-  height: 64px;
+  height: 80px;
   width: auto;
   object-fit: contain;
   filter: brightness(0) invert(1);
+  transform: scale(1.5);
+  transform-origin: left center;
 }
 
 .footer-brand-desc {
