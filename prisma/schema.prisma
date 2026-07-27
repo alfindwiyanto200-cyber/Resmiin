@@ -1,0 +1,103 @@
+// This is your Prisma schema file for resmiin-web (main website).
+// The full admin schema lives in resmiin-admin/prisma/schema.prisma
+// This schema mirrors the Article, Category, Tag, and User tables
+// that resmiin-admin manages, so the website can read from the same DB.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  EDITOR
+  AUTHOR
+  VIEWER
+}
+
+enum ArticleStatus {
+  DRAFT
+  PUBLISHED
+  SCHEDULED
+  ARCHIVED
+  TRASH
+}
+
+model User {
+  id        String    @id @default(cuid())
+  name      String
+  email     String    @unique
+  role      Role      @default(AUTHOR)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  articles  Article[]
+}
+
+model Category {
+  id          String    @id @default(cuid())
+  name        String
+  slug        String    @unique
+  description String?
+  articles    Article[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Tag {
+  id        String       @id @default(cuid())
+  name      String
+  slug      String       @unique
+  articles  ArticleTag[]
+  createdAt DateTime     @default(now())
+}
+
+model Article {
+  id               String        @id @default(cuid())
+  title            String
+  slug             String        @unique
+  excerpt          String?       @db.Text
+  content          String?       @db.Text
+  featuredImage    String?
+  authorId         String?
+  categoryId       String?
+  status           ArticleStatus @default(DRAFT)
+  featured         Boolean       @default(false)
+  // SEO Fields
+  seoTitle         String?
+  seoDescription   String?       @db.Text
+  focusKeyword     String?
+  canonicalUrl     String?
+  metaRobots       String?       @default("index, follow")
+  // Open Graph
+  ogTitle          String?
+  ogDescription    String?       @db.Text
+  ogImage          String?
+  // Twitter Card
+  twitterTitle     String?
+  twitterDescription String?     @db.Text
+  twitterImage     String?
+  // Schema
+  schemaMarkup     String?       @db.Text
+  // Timestamps
+  publishedAt      DateTime?
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+  // Relations
+  author           User?         @relation(fields: [authorId], references: [id])
+  category         Category?     @relation(fields: [categoryId], references: [id])
+  tags             ArticleTag[]
+}
+
+model ArticleTag {
+  articleId String
+  tagId     String
+  article   Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  tag       Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([articleId, tagId])
+}

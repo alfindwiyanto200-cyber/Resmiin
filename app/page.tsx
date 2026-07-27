@@ -7,6 +7,7 @@ export default function HomePage() {
   const [heroLoaded, setHeroLoaded] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setHeroLoaded(true);
   }, []);
 

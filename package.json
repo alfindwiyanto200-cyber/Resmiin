@@ -1,19 +1,22 @@
 {
-  "name": "resmiin-app",
+  "name": "resmiin-web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio"
   },
   "dependencies": {
-    "@portabletext/react": "^6.2.0",
+    "@prisma/client": "^6.0.0",
     "next": "16.2.10",
-    "next-sanity": "^13.1.4",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -22,6 +25,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
+    "prisma": "^6.0.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
