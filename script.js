@@ -27,25 +27,19 @@ document.addEventListener('DOMContentLoaded', () => {
           if (otherDrop) {
             otherDrop.style.opacity = '0';
             otherDrop.style.pointerEvents = 'none';
-            otherDrop.style.transform = otherDrop.classList.contains('mega-dropdown')
-              ? 'translateY(8px)'
-              : 'translateX(-50%) translateY(8px)';
+            otherDrop.style.transform = 'translateX(-50%) translateY(8px)';
           }
         }
       });
       dropdown.style.opacity = '1';
       dropdown.style.pointerEvents = 'auto';
-      dropdown.style.transform = dropdown.classList.contains('mega-dropdown')
-        ? 'translateY(0)'
-        : 'translateX(-50%) translateY(0)';
+      dropdown.style.transform = 'translateX(-50%) translateY(0)';
     };
 
     const closeDropdown = () => {
       dropdown.style.opacity = '0';
       dropdown.style.pointerEvents = 'none';
-      dropdown.style.transform = dropdown.classList.contains('mega-dropdown')
-        ? 'translateY(8px)'
-        : 'translateX(-50%) translateY(8px)';
+      dropdown.style.transform = 'translateX(-50%) translateY(8px)';
     };
 
     const scheduleClose = () => {
