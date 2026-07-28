@@ -145,13 +145,11 @@ ul { list-style: none; }
   z-index: 900;
 }
 
-/* Enable dropdown display on hover & active */
+/* Enable dropdown display on active state class only */
 .has-dropdown {
   position: relative;
   cursor: pointer;
 }
-.has-dropdown:hover .mega-dropdown,
-.has-dropdown:focus-within .mega-dropdown,
 .mega-dropdown.is-open {
   opacity: 1 !important;
   pointer-events: auto !important;
@@ -261,8 +259,6 @@ ul { list-style: none; }
   transition: opacity .22s, transform .22s;
   z-index: 900;
 }
-.has-dropdown:hover .nav-dropdown:not(.mega-dropdown),
-.has-dropdown:focus-within .nav-dropdown:not(.mega-dropdown),
 .nav-dropdown:not(.mega-dropdown).is-open {
   opacity: 1 !important;
   pointer-events: auto !important;
