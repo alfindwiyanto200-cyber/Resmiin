@@ -126,6 +126,13 @@ export default function Navbar() {
                           <span className="mega-desc">Akta &amp; SK Kemenkumham Lengkap</span>
                         </div>
                       </Link>
+                      <Link href="/pendirian-perkumpulan" className="mega-item" onClick={closeDropdown}>
+                        <div className="mega-ico" style={{ background: '#F5F3FF' }}>🤝</div>
+                        <div className="mega-text">
+                          <span className="mega-name">Pendirian Perkumpulan <span className="mega-badge mega-badge--green">PROMO</span></span>
+                          <span className="mega-desc">Akta &amp; SK Kemenkumham Lengkap</span>
+                        </div>
+                      </Link>
                     </div>
 
                     <div className="mega-section" style={{ marginTop: '20px' }}>
@@ -283,6 +290,7 @@ export default function Navbar() {
                     <Link href="/pendirian-cv" className="mob-sub-link" onClick={closeDropdown}>Pendirian CV</Link>
                     <Link href="/pendirian-pt" className="mob-sub-link" onClick={closeDropdown}>Pendirian PT</Link>
                     <Link href="/pendirian-yayasan" className="mob-sub-link" onClick={closeDropdown}>Pendirian Yayasan</Link>
+                    <Link href="/pendirian-perkumpulan" className="mob-sub-link" onClick={closeDropdown}>Pendirian Perkumpulan</Link>
                   </div>
                 )}
               </div>
