@@ -204,7 +204,7 @@ export default function Navbar() {
                   <div className="mega-col">
                     <div className="mega-section">
                       <p className="mega-head">PEMASARAN DIGITAL</p>
-                      <Link href="/layanan/pemasaran-digital" className="mega-item" onClick={closeDropdown}>
+                      <Link href="/layanan/digital-marketing" className="mega-item" onClick={closeDropdown}>
                         <div className="mega-ico" style={{ background: '#EEF2F6' }}>📈</div>
                         <div className="mega-text">
                           <span className="mega-name">Digital Marketing</span>
@@ -335,7 +335,7 @@ export default function Navbar() {
 
               {/* OTHER SUBCATS DIRECT */}
               <Link href="/layanan/merek-haki" className="mob-sub-link" style={{ paddingLeft: '12px', fontWeight: 600 }} onClick={closeDropdown}>Perlindungan Merek &amp; HKI</Link>
-              <Link href="/layanan/pemasaran-digital" className="mob-sub-link" style={{ paddingLeft: '12px', fontWeight: 600 }} onClick={closeDropdown}>Pemasaran Digital</Link>
+              <Link href="/layanan/digital-marketing" className="mob-sub-link" style={{ paddingLeft: '12px', fontWeight: 600 }} onClick={closeDropdown}>Digital Marketing</Link>
               <Link href="/layanan/virtual-office" className="mob-sub-link" style={{ paddingLeft: '12px', fontWeight: 600 }} onClick={closeDropdown}>Virtual Office</Link>
             </div>
           )}

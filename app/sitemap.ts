@@ -20,7 +20,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/layanan/sertifikat-standar',
     '/layanan/perizinan-usaha',
     '/layanan/merek-haki',
-    '/layanan/pemasaran-digital',
+    '/layanan/digital-marketing',
     '/layanan/virtual-office',
     '/blog',
   ];

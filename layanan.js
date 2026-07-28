@@ -534,7 +534,15 @@ document.addEventListener('DOMContentLoaded', () => {
     'pendirian-pt': 'pendirian-pt.html',
     'pendirian-yayasan': 'pendirian-yayasan.html',
     'pendirian-perkumpulan': 'pendirian-perkumpulan.html',
-    'merek-haki': 'merek-haki.html'
+    'merek-haki': 'merek-haki.html',
+    'sertifikasi-iso': 'sertifikasi-iso.html',
+    'sni': 'sni.html',
+    'sop': 'sop.html',
+    'nib': 'nib.html',
+    'sertifikat-standar': 'sertifikat-standar.html',
+    'perizinan-usaha': 'perizinan-usaha.html',
+    'pemasaran-digital': 'digital-marketing.html',
+    'virtual-office': 'virtual-office.html'
   };
 
   if (key && REDIRECT_MAP[key]) {

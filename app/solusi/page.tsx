@@ -42,7 +42,7 @@ export default function SolusiPage() {
       title: 'Akselerasi Pemasaran Digital',
       desc: 'Meningkatkan penjualan dan jangkauan pasar bisnis Anda melalui strategi digital marketing terukur yang dikelola oleh tim growth hacker profesional kami.',
       items: ['Optimasi Mesin Pencari (SEO)', 'Iklan Google & Meta (Google Ads, Facebook Ads)', 'Pengelolaan Media Sosial & Konten', 'Pembuatan Landing Page Berkonversi Tinggi'],
-      link: '/layanan/pemasaran-digital'
+      link: '/layanan/digital-marketing'
     },
     {
       ico: '⚙️',
