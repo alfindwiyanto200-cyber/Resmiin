@@ -15,109 +15,276 @@
 <body>
 
   <!-- ===== NAVBAR ===== -->
+  <!-- ===== NAVBAR ===== -->
+  <!-- ===== NAVBAR ===== -->
   <header class="navbar" id="navbar">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo-wrap">
-        <img src="logo.png" alt="Resmiin" class="nav-logo" />
+    <div class="nav-inner" style="display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 76px;">
+      <a href="index.html" class="nav-logo-wrap" style="display: flex; align-items: center; min-width: 180px; margin-right: 24px;">
+        <img src="logo.png" alt="Resmiin" class="nav-logo" style="height: 62px; width: auto; object-fit: contain; transform: scale(1.3); transform-origin: left center;" />
       </a>
-      <nav class="nav-menu" id="navMenu">
-        <a href="index.html#harga" class="nav-item">Harga</a>
 
+      <nav class="nav-menu" id="navMenu">
+        <a href="tentang-kami.html" class="nav-item">Tentang Kami</a>
+
+        <!-- MEGA DROPDOWN: LAYANAN -->
         <div class="nav-item has-dropdown mega-dropdown-wrap">
-          <span class="nav-item-label">Layanan <svg width="11" height="11" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg></span>
+          <span class="nav-item-label" style="cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
+            Layanan
+            <svg width="11" height="11" viewBox="0 0 12 12" style="transition: transform 0.2s;"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
+          </span>
           <div class="nav-dropdown mega-dropdown">
             <div class="mega-cols">
+              <!-- KOLOM 1: LEGALITAS & STANDARISASI -->
               <div class="mega-col">
-                <p class="mega-head">BADAN USASA &amp; PT</p>
-                <a href="pt-perorangan.html" class="mega-item">
-                  <div class="mega-ico" style="background:#EBF5FF;">👤</div>
-                  <div class="mega-text">
-                    <span class="mega-name">PT Perorangan</span>
-                    <span class="mega-desc">SK Kemenkumham, NPWP, NIB • <strong>Rp 1.000.000</strong></span>
-                  </div>
-                </a>
-                <a href="pendirian-cv.html" class="mega-item">
-                  <div class="mega-ico" style="background:#F0FDF4;">📋</div>
-                  <div class="mega-text">
-                    <span class="mega-name">Pendirian CV <span class="mega-badge mega-badge--green">PROMO</span></span>
-                    <span class="mega-desc">Akta, SK, NPWP, NIB, Buka Rekening • <strong>Rp 3.000.000</strong></span>
-                  </div>
-                </a>
-                <a href="pendirian-pt.html" class="mega-item">
-                  <div class="mega-ico" style="background:#EBF5FF;">🏢</div>
-                  <div class="mega-text">
-                    <span class="mega-name">Pendirian PT <span class="mega-badge">TERLARIS</span></span>
-                    <span class="mega-desc">Akta, SK, NPWP, NIB, Buka Rekening • <strong>Rp 4.500.000</strong></span>
-                  </div>
-                </a>
+                <div class="mega-section">
+                  <p class="mega-head">LEGALITAS BISNIS</p>
+                  <a href="pt-perorangan.html" class="mega-item">
+                    <div class="mega-ico" style="background: #EBF5FF;">👤</div>
+                    <div class="mega-text">
+                      <span class="mega-name">PT Perorangan</span>
+                      <span class="mega-desc">SK Kemenkumham, NPWP, NIB</span>
+                    </div>
+                  </a>
+                  <a href="pendirian-cv.html" class="mega-item">
+                    <div class="mega-ico" style="background: #F0FDF4;">📋</div>
+                    <div class="mega-text">
+                      <span class="mega-name">Pendirian CV <span class="mega-badge mega-badge--green">PROMO</span></span>
+                      <span class="mega-desc">Akta, SK, NPWP, NIB, Buka Rekening</span>
+                    </div>
+                  </a>
+                  <a href="pendirian-pt.html" class="mega-item">
+                    <div class="mega-ico" style="background: #EBF5FF;">🏢</div>
+                    <div class="mega-text">
+                      <span class="mega-name">Pendirian PT <span class="mega-badge">TERLARIS</span></span>
+                      <span class="mega-desc">Akta, SK, NPWP, NIB, Buka Rekening</span>
+                    </div>
+                  </a>
+                  <a href="pendirian-yayasan.html" class="mega-item">
+                    <div class="mega-ico" style="background: #FFF7ED;">🏛️</div>
+                    <div class="mega-text">
+                      <span class="mega-name">Pendirian Yayasan</span>
+                      <span class="mega-desc">Akta &amp; SK Kemenkumham Lengkap</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="mega-section" style="margin-top: 20px;">
+                  <p class="mega-head">STANDARISASI BISNIS</p>
+                  <a href="layanan.html?s=sertifikasi-iso" class="mega-item">
+                    <div class="mega-ico" style="background: #FDF2F8;">🏅</div>
+                    <div class="mega-text">
+                      <span class="mega-name">Sertifikasi ISO</span>
+                      <span class="mega-desc">ISO 9001, 14001, 45001, dll.</span>
+                    </div>
+                  </a>
+                  <a href="layanan.html?s=sni" class="mega-item">
+                    <div class="mega-ico" style="background: #ECFDF5;">🛡️</div>
+                    <div class="mega-text">
+                      <span class="mega-name">Standar Nasional Indonesia (SNI)</span>
+                      <span class="mega-desc">Sertifikasi mutu &amp; kepatuhan produk</span>
+                    </div>
+                  </a>
+                  <a href="layanan.html?s=sop" class="mega-item">
+                    <div class="mega-ico" style="background: #F3F4F6;">⚙️</div>
+                    <div class="mega-text">
+                      <span class="mega-name">Standarisasi SOP</span>
+                      <span class="mega-desc">Penyusunan Standard Operating Procedure</span>
+                    </div>
+                  </a>
+                </div>
               </div>
+
+              <!-- KOLOM 2: PERIZINAN & PERLINDUNGAN MEREK -->
               <div class="mega-col">
-                <p class="mega-head">ORGANISASI &amp; NIRLABA</p>
-                <a href="pendirian-yayasan.html" class="mega-item">
-                  <div class="mega-ico" style="background:#FFF7ED;">🏛️</div>
-                  <div class="mega-text">
-                    <span class="mega-name">Pendirian Yayasan <span class="mega-badge mega-badge--green">PROMO</span></span>
-                    <span class="mega-desc">Salinan Pendirian &amp; SK Kemenkumham • <strong>Rp 3.000.000</strong></span>
-                  </div>
-                </a>
-                <a href="pendirian-perkumpulan.html" class="mega-item">
-                  <div class="mega-ico" style="background:#F5F3FF;">🤝</div>
-                  <div class="mega-text">
-                    <span class="mega-name">Pendirian Perkumpulan <span class="mega-badge mega-badge--green">PROMO</span></span>
-                    <span class="mega-desc">Salinan Akta &amp; SK Kemenkumham • <strong>Rp 3.000.000</strong></span>
-                  </div>
-                </a>
+                <div class="mega-section">
+                  <p class="mega-head">PERIZINAN BERUSAHA</p>
+                  <a href="layanan.html?s=nib" class="mega-item">
+                    <div class="mega-ico" style="background: #F0FDF4;">📄</div>
+                    <div class="mega-text">
+                      <span class="mega-name">Nomor Induk Berusaha (NIB)</span>
+                      <span class="mega-desc">Identitas pelaku usaha resmi via OSS</span>
+                    </div>
+                  </a>
+                  <a href="layanan.html?s=sertifikat-standar" class="mega-item">
+                    <div class="mega-ico" style="background: #FEF3C7;">📜</div>
+                    <div class="mega-text">
+                      <span class="mega-name">Sertifikat Standar</span>
+                      <span class="mega-desc">Pemenuhan standar usaha terverifikasi</span>
+                    </div>
+                  </a>
+                  <a href="layanan.html?s=perizinan-usaha" class="mega-item">
+                    <div class="mega-ico" style="background: #FFF1F2;">🔑</div>
+                    <div class="mega-text">
+                      <span class="mega-name">Perizinan Usaha</span>
+                      <span class="mega-desc">Izin khusus operasional &amp; komersial</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="mega-section" style="margin-top: 20px;">
+                  <p class="mega-head">PERLINDUNGAN MEREK &amp; HKI</p>
+                  <a href="merek-haki.html" class="mega-item">
+                    <div class="mega-ico" style="background: #EBF5FF;">🛡️</div>
+                    <div class="mega-text">
+                      <span class="mega-name">Merek &amp; HKI</span>
+                      <span class="mega-desc">Pendaftaran Merek, Hak Cipta &amp; Paten</span>
+                    </div>
+                  </a>
+                </div>
               </div>
+
+              <!-- KOLOM 3: PEMASARAN DIGITAL & VIRTUAL OFFICE -->
               <div class="mega-col">
-                <p class="mega-head">HAK KEKAYAAN INTELEKTUAL</p>
-                <a href="merek-haki.html" class="mega-item">
-                  <div class="mega-ico" style="background:#EBF5FF;">🛡️</div>
-                  <div class="mega-text">
-                    <span class="mega-name">Merek &amp; HAKI <span class="mega-badge mega-badge--green">PROMO</span></span>
-                    <span class="mega-desc">Bukti Pendaftaran HAKI Resmi • <strong>Rp 3.500.000</strong></span>
-                  </div>
-                </a>
+                <div class="mega-section">
+                  <p class="mega-head">PEMASARAN DIGITAL</p>
+                  <a href="layanan.html?s=pemasaran-digital" class="mega-item">
+                    <div class="mega-ico" style="background: #EEF2F6;">📈</div>
+                    <div class="mega-text">
+                      <span class="mega-name">Digital Marketing</span>
+                      <span class="mega-desc">SEO, Ads, Content &amp; Landing Page</span>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="mega-section" style="margin-top: 20px;">
+                  <p class="mega-head">VIRTUAL OFFICE</p>
+                  <a href="layanan.html?s=virtual-office" class="mega-item">
+                    <div class="mega-ico" style="background: #F5F3FF;">🏢</div>
+                    <div class="mega-text">
+                      <span class="mega-name">Virtual Office</span>
+                      <span class="mega-desc">Alamat bisnis, surat menyurat &amp; ruang meeting</span>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="nav-item has-dropdown">
-          <span class="nav-item-label">Mengeksplorasi <svg width="11" height="11" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg></span>
-          <div class="nav-dropdown">
-            <div class="dropdown-cols">
-              <div>
-                <p class="drop-head">PANDUAN</p>
-                <a href="blog.html" class="drop-link" style="color:var(--blue); font-weight:700;">Blog &amp; Artikel</a>
-                <a href="pendirian-pt.html" class="drop-link">Panduan Mendirikan PT</a>
-              </div>
-              <div>
-                <p class="drop-head">PERUSAHAAN</p>
-                <a href="index.html#visi-misi" class="drop-link">Visi &amp; Misi</a>
-                <a href="index.html#testimoni" class="drop-link">Testimoni</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <a href="solusi.html" class="nav-item">Solusi</a>
+
+        <a href="blog.html" class="nav-item">Berita &amp; Artikel</a>
       </nav>
+
       <div class="nav-actions">
-        <a href="https://wa.me/62000000000" class="btn-nav-ghost">Hubungi Kami</a>
-        <a href="index.html#harga" class="btn-nav-primary">Mulai Sekarang</a>
+        <a href="https://wa.link/1c0f23" target="_blank" rel="noreferrer" class="btn-nav-primary">
+          Hubungi Kami
+        </a>
       </div>
+
       <button class="burger" id="burger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <!-- Mobile nav -->
-  <div class="mobile-nav" id="mobileNav">
-    <a href="index.html#harga" class="mob-link">Harga</a>
-    <a href="pt-perorangan.html" class="mob-link">PT Perorangan</a>
-    <a href="pendirian-cv.html" class="mob-link">Pendirian CV</a>
-    <a href="pendirian-pt.html" class="mob-link">Pendirian PT</a>
-    <a href="blog.html" class="mob-link" style="color:var(--blue);">Blog &amp; Artikel</a>
-    <a href="https://wa.me/62000000000" class="btn-nav-primary" style="margin-top:8px;">Mulai Sekarang</a>
+  <!-- Mobile nav (Accordion Style) -->
+  <div class="mobile-nav" id="mobileNav" style="display: none; flex-direction: column; gap: 8px;">
+    <a href="tentang-kami.html" class="mob-link">Tentang Kami</a>
+    
+    <!-- LAYANAN ACCORDION -->
+    <div class="mob-accordion">
+      <a href="#" class="mob-link mob-accordion-trigger" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+        Layanan
+        <svg width="12" height="12" viewBox="0 0 12 12" style="transition: transform 0.2s;"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>
+      </a>
+      
+      <div class="mob-accordion-content" style="display: none; padding-left: 16px; flex-direction: column; gap: 4px;">
+        <!-- SUBCAT: LEGALITAS -->
+        <div class="mob-sub-accordion">
+          <a href="#" class="mob-sub-trigger" style="display: flex; justify-content: space-between; width: 100%;">
+            Legalitas Bisnis
+            <span>+</span>
+          </a>
+          <div style="display: none; padding-left: 12px; flex-direction: column;">
+            <a href="pt-perorangan.html" class="mob-sub-link">PT Perorangan</a>
+            <a href="pendirian-cv.html" class="mob-sub-link">Pendirian CV</a>
+            <a href="pendirian-pt.html" class="mob-sub-link">Pendirian PT</a>
+            <a href="pendirian-yayasan.html" class="mob-sub-link">Pendirian Yayasan</a>
+          </div>
+        </div>
+
+        <!-- SUBCAT: STANDARISASI -->
+        <div class="mob-sub-accordion">
+          <a href="#" class="mob-sub-trigger" style="display: flex; justify-content: space-between; width: 100%;">
+            Standarisasi Bisnis
+            <span>+</span>
+          </a>
+          <div style="display: none; padding-left: 12px; flex-direction: column;">
+            <a href="layanan.html?s=sertifikasi-iso" class="mob-sub-link">Sertifikasi ISO</a>
+            <a href="layanan.html?s=sni" class="mob-sub-link">Standar Nasional Indonesia (SNI)</a>
+            <a href="layanan.html?s=sop" class="mob-sub-link">Standarisasi SOP</a>
+          </div>
+        </div>
+
+        <!-- SUBCAT: PERIZINAN -->
+        <div class="mob-sub-accordion">
+          <a href="#" class="mob-sub-trigger" style="display: flex; justify-content: space-between; width: 100%;">
+            Perizinan Berusaha
+            <span>+</span>
+          </a>
+          <div style="display: none; padding-left: 12px; flex-direction: column;">
+            <a href="layanan.html?s=nib" class="mob-sub-link">Nomor Induk Berusaha (NIB)</a>
+            <a href="layanan.html?s=sertifikat-standar" class="mob-sub-link">Sertifikat Standar</a>
+            <a href="layanan.html?s=perizinan-usaha" class="mob-sub-link">Perizinan Usaha</a>
+          </div>
+        </div>
+
+        <!-- DIRECT SUBCATS -->
+        <a href="merek-haki.html" class="mob-sub-link" style="padding-left: 12px; font-weight: 600;">Perlindungan Merek &amp; HKI</a>
+        <a href="layanan.html?s=pemasaran-digital" class="mob-sub-link" style="padding-left: 12px; font-weight: 600;">Pemasaran Digital</a>
+        <a href="layanan.html?s=virtual-office" class="mob-sub-link" style="padding-left: 12px; font-weight: 600;">Virtual Office</a>
+      </div>
+    </div>
+
+    <a href="solusi.html" class="mob-link">Solusi</a>
+    <a href="blog.html" class="mob-link">Berita &amp; Artikel</a>
+    
+    <a href="https://wa.link/1c0f23" target="_blank" rel="noreferrer" class="btn-nav-primary" style="margin-top: 12px; text-align: center;">
+      Hubungi Kami
+    </a>
+  </div>
+        </div>
+
+        <!-- SUBCAT: STANDARISASI -->
+        <div class="mob-sub-accordion">
+          <a href="#" class="mob-sub-trigger" style="display: flex; justify-content: space-between; width: 100%;">
+            Standarisasi Bisnis
+            <span>+</span>
+          </a>
+          <div style="display: none; padding-left: 12px; flex-direction: column;">
+            <a href="sertifikasi-iso.html" class="mob-sub-link">Sertifikasi ISO</a>
+            <a href="sni.html" class="mob-sub-link">Standar Nasional Indonesia (SNI)</a>
+            <a href="sop.html" class="mob-sub-link">Standarisasi SOP</a>
+          </div>
+        </div>
+
+        <!-- SUBCAT: PERIZINAN -->
+        <div class="mob-sub-accordion">
+          <a href="#" class="mob-sub-trigger" style="display: flex; justify-content: space-between; width: 100%;">
+            Perizinan Berusaha
+            <span>+</span>
+          </a>
+          <div style="display: none; padding-left: 12px; flex-direction: column;">
+            <a href="nib.html" class="mob-sub-link">Nomor Induk Berusaha (NIB)</a>
+            <a href="sertifikat-standar.html" class="mob-sub-link">Sertifikat Standar</a>
+            <a href="perizinan-usaha.html" class="mob-sub-link">Perizinan Usaha</a>
+          </div>
+        </div>
+
+        <!-- DIRECT SUBCATS -->
+        <a href="merek-haki.html" class="mob-sub-link" style="padding-left: 12px; font-weight: 600;">Perlindungan Merek &amp; HKI</a>
+        <a href="pemasaran-digital.html" class="mob-sub-link" style="padding-left: 12px; font-weight: 600;">Pemasaran Digital</a>
+        <a href="virtual-office.html" class="mob-sub-link" style="padding-left: 12px; font-weight: 600;">Virtual Office</a>
+      </div>
+    </div>
+
+    <a href="solusi.html" class="mob-link">Solusi</a>
+    <a href="blog.html" class="mob-link">Berita &amp; Artikel</a>
+    
+    <a href="https://wa.link/1c0f23" target="_blank" rel="noreferrer" class="btn-nav-primary" style="margin-top: 12px; text-align: center;">
+      Hubungi Kami
+    </a>
   </div>
 
   <!-- ===== BLOG HERO HEADER ===== -->

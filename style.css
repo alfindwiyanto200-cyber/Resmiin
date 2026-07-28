@@ -71,7 +71,7 @@ ul { list-style: none; }
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
-  height: 64px;
+  height: 76px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -127,7 +127,7 @@ ul { list-style: none; }
 
 .mega-dropdown {
   position: fixed;
-  top: 64px;
+  top: 76px;
   left: 0 !important;
   right: 0 !important;
   width: 100vw !important;
@@ -309,7 +309,7 @@ ul { list-style: none; }
   flex-direction: column;
   gap: 4px;
   position: fixed;
-  top: 64px; left: 0; right: 0;
+  top: 76px; left: 0; right: 0;
   background: var(--white);
   padding: 16px 24px 24px;
   border-bottom: 1px solid var(--gray-100);
@@ -327,6 +327,63 @@ ul { list-style: none; }
   transition: var(--t);
 }
 .mob-link:hover { color: var(--blue); background: var(--blue-pale); }
+
+/* Accordion styles */
+.mob-accordion {
+  width: 100%;
+}
+.mob-accordion-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mob-accordion-trigger svg {
+  transition: transform 0.2s ease;
+}
+.mob-accordion-trigger.active svg {
+  transform: rotate(180deg);
+}
+.mob-accordion-content {
+  border-left: 2px solid var(--blue-pale);
+  padding-left: 12px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.mob-sub-accordion {
+  width: 100%;
+}
+.mob-sub-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px !important;
+  font-weight: 600;
+  color: var(--text-mid);
+  padding: 8px 12px;
+  border-radius: var(--radius-s);
+  cursor: pointer;
+  transition: var(--t);
+}
+.mob-sub-trigger:hover {
+  background: var(--gray-50);
+}
+.mob-sub-link {
+  display: block;
+  padding: 8px 14px;
+  font-size: 13.5px;
+  color: var(--text-soft);
+  border-radius: var(--radius-s);
+  transition: var(--t);
+}
+.mob-sub-link:hover {
+  color: var(--blue);
+  background: var(--blue-pale);
+}
 
 /* ============================================
    HERO — Full-width image, text left
@@ -1294,7 +1351,7 @@ ul { list-style: none; }
   .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .nav-menu, .nav-actions { display: none; }
   .burger { display: flex; }
 
@@ -1315,4 +1372,23 @@ ul { list-style: none; }
   .hero-h1 { font-size: 36px; }
   .feat-box { padding: 28px 24px 32px; }
   .cta-btns { flex-direction: column; align-items: center; }
+}
+
+/* Solusi Page Card Styling */
+.solusi-card {
+  background: #fff;
+  border: 1px solid var(--gray-100);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 30px rgba(13,27,42,0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+.solusi-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-m);
 }

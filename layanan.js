@@ -203,6 +203,273 @@ const SERVICES = {
     related: ['pendirian-yayasan', 'pendirian-cv', 'merek-haki'],
   },
 
+  'sertifikasi-iso': {
+    badge: '🏅 STANDARISASI INTERNASIONAL',
+    title: 'Sertifikasi ISO',
+    checklist: [
+      'Sertifikat ISO 9001:2015 (Manajemen Mutu)',
+      'Sertifikat ISO 14001:2015 (Sistem Lingkungan)',
+      'Sertifikat ISO 45001:2018 (Manajemen K3)',
+      'Pendampingan audit &amp; dokumentasi penuh',
+    ],
+    price: 'Rp 12.500.000',
+    oldPrice: 'Rp 15.000.000',
+    cta: 'Ajukan Sertifikasi ISO',
+    docTitle: 'Sertifikat ISO Resmi',
+    docIco: '🏅',
+    duration: '3–4 minggu',
+    features: [
+      { ico: '🎖️', title: 'Sertifikasi ISO Terakreditasi', desc: 'Sertifikat ISO resmi yang dikeluarkan oleh badan sertifikasi nasional maupun internasional yang terakreditasi KAN/IAS.' },
+      { ico: '📝', title: 'Penyusunan Manual Mutu &amp; Prosedur', desc: 'Pembuatan manual mutu, instruksi kerja, dan kebijakan perusahaan sesuai klausul standar ISO.' },
+      { ico: '🕵️', title: 'Internal Audit &amp; Review Manajemen', desc: 'Pendampingan pelaksanaan audit internal serta rapat tinjauan manajemen untuk kesiapan audit eksternal.' },
+    ],
+    steps: [
+      { title: 'Gap Analysis &amp; Diagnosa Awal', desc: 'Menganalisis kesiapan sistem operasional perusahaan saat ini dibandingkan standar ISO.' },
+      { title: 'Perancangan Sistem &amp; Dokumentasi', desc: 'Menyusun prosedur kerja (SOP), instruksi kerja, formulir, dan manual mutu.' },
+      { title: 'Implementasi &amp; Audit Internal', desc: 'Menerapkan sistem baru secara operasional dan melatih tim internal untuk audit.' },
+      { title: 'Audit Badan Sertifikasi (Stage 1 &amp; 2)', desc: 'Pendampingan penuh saat audit eksternal oleh auditor dari badan sertifikasi pilihan hingga sertifikat diterbitkan.' },
+    ],
+    faq: [
+      { q: 'Berapa lama masa berlaku Sertifikat ISO?', a: 'Sertifikat ISO berlaku selama 3 tahun dengan kewajiban audit pengawasan (surveillance audit) setiap tahun.' },
+      { q: 'Apa saja dokumen yang harus disiapkan?', a: 'Legalitas perusahaan (Akta, NIB), profil organisasi, serta komitmen pimpinan untuk menerapkan sistem manajemen mutu.' }
+    ],
+    related: ['sop', 'pendirian-pt', 'sni']
+  },
+
+  'sni': {
+    badge: '🛡️ SERTIFIKASI MUTU NASIONAL',
+    title: 'Sertifikasi SNI',
+    checklist: [
+      'Sertifikat SPPT SNI dari LSPro Terakreditasi',
+      'Pengujian Laboratorium terakreditasi KAN',
+      'Pendampingan Audit Sistem Manajemen Mutu (SMM)',
+      'Registrasi Nomor Pendaftaran Barang (NPB)',
+    ],
+    price: 'Rp 25.000.000',
+    oldPrice: 'Rp 30.000.000',
+    cta: 'Ajukan Sertifikasi SNI',
+    docTitle: 'Sertifikat SPPT SNI',
+    docIco: '🛡️',
+    duration: '2–3 bulan',
+    features: [
+      { ico: '🔬', title: 'Pengujian Laboratorium KAN', desc: 'Melakukan pengujian kesesuaian fisik, kimia, dan mekanis sampel produk di laboratorium penguji terakreditasi.' },
+      { ico: '🏭', title: 'Audit Pabrik &amp; LSPro', desc: 'Pendampingan penuh audit proses produksi di pabrik oleh Lembaga Sertifikasi Produk (LSPro) resmi.' },
+      { ico: '🏷️', title: 'Tanda SNI &amp; NPB', desc: 'Penerbitan Nomor Pendaftaran Barang (NPB) dan hak penempelan tanda SNI di kemasan produk.' },
+    ],
+    steps: [
+      { title: 'Identifikasi Skema &amp; Parameter SNI', desc: 'Menentukan apakah SNI produk wajib/sukarela dan menganalisis parameter pengujian.' },
+      { title: 'Persiapan Dokumen &amp; SMM Pabrik', desc: 'Menyusun manual mutu pabrik dan melengkapi berkas administrasi importir/produsen.' },
+      { title: 'Audit LSPro &amp; Sampling Produk', desc: 'Petugas LSPro melakukan audit lapangan ke fasilitas produksi dan mengambil sampel acak.' },
+      { title: 'Pengujian Laboratorium &amp; Terbit SNI', desc: 'Menunggu hasil pengujian laboratorium dan sidang panel LSPro hingga SPPT SNI diterbitkan.' },
+    ],
+    faq: [
+      { q: 'Apakah semua produk wajib memiliki SNI?', a: 'Tidak semua, ada produk dengan SNI Wajib (seperti Helm, Air Mineral, Baja, dll.) dan ada yang SNI Sukarela.' },
+      { q: 'Berapa biaya pengujian laboratorium?', a: 'Biaya pengujian lab bervariasi bergantung pada jenis produk dan parameter uji yang dipersyaratkan.' }
+    ],
+    related: ['sertifikasi-iso', 'merek-haki', 'sop']
+  },
+
+  'sop': {
+    badge: '⚙️ OPERASIONAL EFEKTIF',
+    title: 'Standarisasi SOP',
+    checklist: [
+      'Buku Dokumen SOP Departemen Lengkap',
+      'Flowchart Visual &amp; Bagan Alur Kerja',
+      'Deskripsi Pekerjaan (Job Descriptions) Jelas',
+      'Template Formulir Kerja &amp; KPI Pendukung',
+    ],
+    price: 'Rp 6.000.000',
+    oldPrice: 'Rp 8.000.000',
+    cta: 'Ajukan Pembuatan SOP',
+    docTitle: 'Buku Dokumen SOP',
+    docIco: '⚙️',
+    duration: '2–3 minggu',
+    features: [
+      { ico: '📊', title: 'Pemetaan Proses Bisnis', desc: 'Menganalisis dan menyusun ulang alur kerja divisi keuangan, HRD, pemasaran, dan operasional inti agar lebih ramping.' },
+      { ico: '🗺️', title: 'Flowchart Visual Terstruktur', desc: 'Pembuatan diagram alir visual untuk mempermudah karyawan memahami tanggung jawab masing-masing.' },
+      { ico: '📈', title: 'KPI &amp; Form Evaluasi Kerja', desc: 'Penyusunan indikator kinerja utama (KPI) serta formulir harian/mingguan untuk memantau disiplin tim.' },
+    ],
+    steps: [
+      { title: 'Wawancara &amp; Pemetaan Bisnis', desc: 'Tim melakukan wawancara dengan manajemen &amp; kepala divisi untuk memetakan kondisi saat ini (As-Is).' },
+      { title: 'Penyusunan Draf Prosedur (SOP)', desc: 'Menulis draf tertulis berisi alur kerja, penanggung jawab, input, dan output proses.' },
+      { title: 'Review &amp; Diskusi Bersama (FGD)', desc: 'Melakukan Focus Group Discussion bersama manajemen untuk meninjau kecocokan draf SOP.' },
+      { title: 'Finalisasi &amp; Pelatihan Sosialisasi', desc: 'Penyelesaian dokumen akhir, pembuatan diagram visual, dan sesi sosialisasi kepada karyawan.' },
+    ],
+    faq: [
+      { q: 'Mengapa bisnis memerlukan SOP?', a: 'SOP menjaga konsistensi kualitas pelayanan, mencegah kesalahan operasional, dan mempermudah onboarding karyawan baru.' },
+      { q: 'Apakah SOP disesuaikan dengan alur kerja kami?', a: 'Ya, tim kami merancang SOP kustom berdasarkan wawancara mendalam mengenai bisnis spesifik Anda.' }
+    ],
+    related: ['sertifikasi-iso', 'pendirian-pt', 'nib']
+  },
+
+  'nib': {
+    badge: '📄 IDENTITAS BERUSAHA RESMI',
+    title: 'Nomor Induk Berusaha (NIB)',
+    checklist: [
+      'Dokumen NIB OSS RBA Terbit Resmi',
+      'Penentuan Kode KBLI 2020 yang Akurat',
+      'Username &amp; Password Akun OSS Perusahaan',
+      'Hak Akses Ekspor-Impor Dasar (API-U/API-P)',
+    ],
+    price: 'Rp 1.000.000',
+    oldPrice: 'Rp 1.500.000',
+    cta: 'Ajukan Pembuatan NIB',
+    docTitle: 'Dokumen NIB OSS',
+    docIco: '📄',
+    duration: '1–2 hari kerja',
+    features: [
+      { ico: '🔑', title: 'Akses OSS Terintegrasi', desc: 'Pembuatan akun resmi di OSS RBA dengan hak akses penuh diserahkan kembali kepada Anda.' },
+      { ico: '🏷️', title: 'Klasifikasi KBLI Tepat', desc: 'Konsultasi kode KBLI yang cocok agar bisnis Anda beroperasi sesuai lingkup hukum yang berlaku.' },
+      { ico: '⚙️', title: 'Satu Nomor untuk Semua', desc: 'NIB berlaku juga sebagai Tanda Daftar Perusahaan (TDP), Angka Pengenal Importir (API), dan Akses Kepabeanan.' },
+    ],
+    steps: [
+      { title: 'Persiapan Data Pengurus', desc: 'Mengumpulkan KTP, NPWP, dan Akta Perusahaan (bila ada) sebagai syarat awal.' },
+      { title: 'Pemetaan Lokasi &amp; KBLI', desc: 'Menganalisis kode KBLI yang sesuai serta koordinat lokasi usaha untuk izin tata ruang.' },
+      { title: 'Input Sistem OSS RBA', desc: 'Mengisi formulir modal disetor, jumlah karyawan, dan rencana kegiatan usaha di portal OSS.' },
+      { title: 'Penerbitan Dokumen NIB', desc: 'NIB diterbitkan secara elektronik dan file asli PDF resmi dikirimkan langsung kepada Anda.' },
+    ],
+    faq: [
+      { q: 'Apakah perorangan bisa membuat NIB?', a: 'Ya, NIB bisa dibuat untuk perorangan (Usaha Mikro Kecil) maupun badan usaha seperti PT atau CV.' },
+      { q: 'Apakah NIB berlaku selamanya?', a: 'Ya, NIB berlaku selama pelaku usaha menjalankan kegiatan usahanya sesuai ketentuan.' }
+    ],
+    related: ['pendirian-pt', 'sertifikat-standar', 'perizinan-usaha']
+  },
+
+  'sertifikat-standar': {
+    badge: '📜 PERSETUJUAN STANDAR USAHA',
+    title: 'Sertifikat Standar',
+    checklist: [
+      'Sertifikat Standar Disetujui/Terverifikasi OSS',
+      'Dokumen Pernyataan Mandiri Kepatuhan Standar',
+      'Draf Dokumen Kriteria Teknis &amp; Sarana Usaha',
+      'Pengawalan Proses Verifikasi Sektoral Kementerian',
+    ],
+    price: 'Rp 2.500.000',
+    oldPrice: 'Rp 3.500.000',
+    cta: 'Urus Sertifikat Standar',
+    docTitle: 'Sertifikat Standar OSS',
+    docIco: '📜',
+    duration: '5–10 hari kerja',
+    features: [
+      { ico: '🔍', title: 'Penyelarasan Risiko KBLI', desc: 'Membantu pemenuhan standar bagi kegiatan usaha kategori risiko Menengah-Rendah &amp; Menengah-Tinggi.' },
+      { ico: '📄', title: 'Penyusunan Berkas Teknis', desc: 'Menyusun berkas dokumen persyaratan standar sarana, struktur organisasi, dan panduan mutu.' },
+      { ico: '🤝', title: 'Kombinasi Izin Tata Ruang', desc: 'Memastikan KKPR (Kesesuaian Kegiatan Pemanfaatan Ruang) dan izin tata ruang terintegrasi.' },
+    ],
+    steps: [
+      { title: 'Verifikasi Risiko KBLI Usaha', desc: 'Mengecek tingkat risiko KBLI 2020 dan menganalisis kewajiban Sertifikat Standar.' },
+      { title: 'Pengisian Pernyataan Mandiri', desc: 'Mengisi pernyataan kesanggupan pemenuhan standar di platform OSS RBA.' },
+      { title: 'Penyusunan &amp; Upload Bukti Teknis', desc: 'Mengunggah draf persyaratan sarana usaha/sistem manajemen ke dinas teknis sektoral.' },
+      { title: 'Persetujuan &amp; Penerbitan Sertifikat', desc: 'Memantau verifikasi instansi pemerintah daerah/pusat hingga status Sertifikat Standar dinyatakan disetujui.' },
+    ],
+    faq: [
+      { q: 'Apa beda NIB dan Sertifikat Standar?', a: 'NIB adalah identitas dasar pelaku usaha, sedangkan Sertifikat Standar adalah legalitas pemenuhan standar operasional untuk usaha risiko menengah.' },
+      { q: 'Siapa yang melakukan verifikasi?', a: 'Verifikasi dilakukan oleh Dinas Teknis daerah (misalnya Dinas Pariwisata, Kesehatan, Perdagangan) sesuai dengan jenis usaha Anda.' }
+    ],
+    related: ['nib', 'pendirian-pt', 'sertifikasi-iso']
+  },
+
+  'perizinan-usaha': {
+    badge: '🔑 IZIN SEKTORAL &amp; OPERASIONAL',
+    title: 'Perizinan Usaha',
+    checklist: [
+      'Konfirmasi KKPR (Tata Ruang / Izin Lokasi)',
+      'Persetujuan Lingkungan (SPPL / UKL-UPL)',
+      'Perizinan Menunjang Kegiatan Usaha (PB-UMKU)',
+      'Izin Khusus Sektoral Kementerian Teknis',
+    ],
+    price: 'Hubungi Kami',
+    oldPrice: null,
+    cta: 'Hubungi Konsultan Kami',
+    docTitle: 'Perizinan Usaha Khusus',
+    docIco: '🔑',
+    duration: '14–30 hari kerja',
+    features: [
+      { ico: '🗺️', title: 'Izin Tata Ruang (KKPR)', desc: 'Pengecekan kesesuaian zonasi RDTR daerah dan pengurusan KKPR otomatis/darat di platform OSS.' },
+      { ico: '🍀', title: 'Persetujuan Lingkungan', desc: 'Pembuatan dokumen lingkungan SPPL atau UKL-UPL sesuai dengan jenis industri dan skala dampak operasional.' },
+      { ico: '🏢', title: 'PB-UMKU &amp; Izin Sektoral', desc: 'Membantu pengurusan izin edar, sertifikat produksi, izin impor/ekspor, dan izin komersial sektoral lainnya.' },
+    ],
+    steps: [
+      { title: 'Konsultasi RDTR &amp; Zonasi', desc: 'Menganalisis peruntukan ruang lokasi kantor/pabrik sesuai rencana tata ruang daerah.' },
+      { title: 'Pengajuan KKPR Elektronik', desc: 'Mengajukan KKPR di OSS dan mengawal pembayaran PNBP (jika ada) hingga terbit.' },
+      { title: 'Drafting Dokumen Lingkungan', desc: 'Menyusun dokumen UKL-UPL atau SPPL untuk diserahkan ke Dinas Lingkungan Hidup.' },
+      { title: 'Penerbitan Izin Operasional', desc: 'Pengajuan izin khusus komersial (PB-UMKU) di OSS RBA hingga terverifikasi instansi kementerian terkait.' },
+    ],
+    faq: [
+      { q: 'Apa itu PB-UMKU?', a: 'PB-UMKU adalah Perizinan Berusaha Untuk Menunjang Kegiatan Usaha, yaitu izin operasional khusus di luar NIB (misalnya Izin Edar, Izin Apotek, dll.).' },
+      { q: 'Apakah biaya KKPR sama di setiap daerah?', a: 'Sesuai aturan PNBP tata ruang, tarif KKPR dihitung berdasarkan luas lahan, nilai investasi, dan koefisien peruntukan tata ruang.' }
+    ],
+    related: ['nib', 'sertifikat-standar', 'pendirian-pt']
+  },
+
+  'pemasaran-digital': {
+    badge: '📈 GROWTH &amp; PEMASARAN',
+    title: 'Digital Marketing',
+    checklist: [
+      'Optimasi SEO Website (Target Halaman Pertama Google)',
+      'Setup &amp; Optimasi Google Ads &amp; Meta Ads (FB &amp; IG)',
+      'Pengelolaan Content Marketing &amp; Social Media Manajemen',
+      'Landing Page Profesional dengan Konversi Tinggi',
+      'Analisis Data &amp; Tracking Dashboard Analytics Terintegrasi',
+    ],
+    price: 'Rp 5.000.000',
+    oldPrice: 'Rp 7.500.000',
+    cta: 'Mulai Pemasaran Digital',
+    docTitle: 'Strategi Marketing',
+    docIco: '📈',
+    duration: '2–4 minggu',
+    features: [
+      { ico: '🔍', title: 'SEO &amp; Landing Page Kinerja Tinggi', desc: 'Meningkatkan lalu lintas organik website Anda di mesin pencari Google dan membuat landing page berkecepatan tinggi yang dioptimalkan untuk penjualan.' },
+      { ico: '📣', title: 'Google Ads &amp; Meta Ads Tertarget', desc: 'Mengelola kampanye iklan berbayar (PPC) di Google Search/Display serta Instagram, Facebook, dan TikTok Ads untuk menjangkau pembeli potensial secara langsung.' },
+      { ico: '📊', title: 'Content Marketing &amp; Analytics', desc: 'Pembuatan konten media sosial kreatif yang relevan disertai pemasangan tracking pixel, Google Analytics, dan laporan performa berkala.' },
+    ],
+    steps: [
+      { title: 'Riset Audiens &amp; Kompetitor', desc: 'Menganalisis kata kunci berkonversi tinggi, tren pencarian kompetitor, dan menentukan profil target pelanggan bisnis Anda.' },
+      { title: 'Pembuatan Landing Page &amp; Tracking', desc: 'Mendesain landing page penawaran produk/jasa dan memasang tracking pixel serta kode analitik untuk mengukur data konversi.' },
+      { title: 'Peluncuran Campaign &amp; Konten', desc: 'Menulis copywriting iklan yang menarik, mendesain aset visual, menyetel parameter target demografis, dan meluncurkan kampanye iklan.' },
+      { title: 'Optimasi Harian &amp; Laporan Bulanan', desc: 'Memantau biaya per klik (CPC), rasio konversi (ROAS), dan mengirimkan laporan analitik bulanan yang transparan kepada Anda.' },
+    ],
+    faq: [
+      { q: 'Berapa lama iklan digital mulai membuahkan hasil?', a: 'Iklan Google/Meta Ads dapat menghasilkan lalu lintas pengunjung dan prospek leads dalam waktu 24–48 jam setelah aktif.' },
+      { q: 'Apakah paket ini termasuk anggaran beriklan?', a: 'Harga paket adalah fee jasa pengelolaan dari Resmiin. Anggaran saldo iklan (ad spend) ditentukan dan dibayarkan secara terpisah oleh klien.' }
+    ],
+    related: ['pendirian-pt', 'merek-haki', 'sop']
+  },
+
+  'virtual-office': {
+    badge: '🏢 ALAMAT BISNIS STRATEGIS',
+    title: 'Virtual Office',
+    checklist: [
+      'Alamat Bisnis Prestisius &amp; Zonasi Perkantoran Komersial',
+      'Layanan Pengelolaan Surat Menyurat &amp; Paket Masuk',
+      'Resepsionis Profesional (Handling Telpon Klien Anda)',
+      'Gratis Penggunaan Meeting Room &amp; Akses Coworking Space',
+      'Surat Perjanjian Sewa Resmi (PKS) untuk Domisili &amp; PKP',
+      'Tersedia Opsi Sewa Harian/Bulanan Private Office',
+    ],
+    price: 'Rp 3.500.000',
+    oldPrice: 'Rp 4.500.000',
+    cta: 'Sewa Virtual Office',
+    docTitle: 'Perjanjian Sewa Kantor',
+    docIco: '🏢',
+    duration: '1–2 hari kerja',
+    features: [
+      { ico: '📍', title: 'Alamat Prestisius &amp; Legalitas PKP', desc: 'Lokasi di gedung perkantoran komersial utama yang lolos verifikasi zonasi untuk syarat pendirian PT/CV dan pengajuan Pengusaha Kena Pajak (PKP).' },
+      { ico: '📞', title: 'Layanan Resepsionis &amp; Surat', desc: 'Resepsionis profesional siap menangani panggilan telepon masuk atas nama perusahaan Anda dan meneruskan info surat/paket masuk secara instan.' },
+      { ico: '🛋️', title: 'Meeting Room &amp; Private Office', desc: 'Akses gratis ke meeting room berfasilitas lengkap, area coworking space yang dinamis, serta opsi peningkatan ke ruang kantor fisik (Private Office).' },
+    ],
+    steps: [
+      { title: 'Pilih Alamat Gedung &amp; Paket', desc: 'Memilih lokasi gedung kantor virtual strategis yang diinginkan sesuai domisili target pasar Anda.' },
+      { title: 'Lengkapi Data Penyewa', desc: 'Mengisi form pemesanan dan mengirimkan fotokopi KTP &amp; NPWP penanggung jawab perusahaan.' },
+      { title: 'Penyusunan Surat Perjanjian Sewa', desc: 'Menandatangani PKS (Perjanjian Kerjasama) sewa kantor yang sah secara hukum.' },
+      { title: 'Pengiriman Berkas Domisili', desc: 'Surat Keterangan Domisili diserahkan dalam bentuk PDF dan cetak untuk siap digunakan sebagai domisili resmi perusahaan.' },
+    ],
+    faq: [
+      { q: 'Apakah sewa Virtual Office bisa untuk PKP?', a: 'Ya, alamat Virtual Office kami berzonasi perkantoran komersial resmi yang memenuhi syarat kelayakan survei PKP kantor pajak.' },
+      { q: 'Apakah ada batasan waktu penggunaan meeting room?', a: 'Ya, setiap paket memiliki jatah kuota jam meeting room gratis per bulan (biasanya 4–8 jam per bulan).' }
+    ],
+    related: ['pendirian-pt', 'pendirian-cv', 'nib']
+  },
+
   'merek-haki': {
     badge: '🔥 HARGA PROMO HAKI',
     title: 'Merek & HAKI',
@@ -245,6 +512,14 @@ const SERVICE_LABELS = {
   'pendirian-yayasan':     { name: 'Pendirian Yayasan',    ico: '🏛️', bg: '#FFF7ED', price: 'Rp 3.000.000 (Promo)' },
   'pendirian-perkumpulan': { name: 'Pendirian Perkumpulan',ico: '🤝', bg: '#F5F3FF', price: 'Rp 3.000.000 (Promo)' },
   'merek-haki':            { name: 'Merek & HAKI',         ico: '🛡️', bg: '#EBF5FF', price: 'Rp 3.500.000 (Promo)' },
+  'sertifikasi-iso':     { name: 'Sertifikasi ISO',      ico: '🏅', bg: '#FDF2F8', price: 'Rp 12.500.000' },
+  'sni':                 { name: 'Sertifikasi SNI',      ico: '🛡️', bg: '#ECFDF5', price: 'Rp 25.000.000' },
+  'sop':                 { name: 'Standarisasi SOP',     ico: '⚙️', bg: '#F3F4F6', price: 'Rp 6.000.000' },
+  'nib':                 { name: 'NIB OSS',              ico: '📄', bg: '#F0FDF4', price: 'Rp 1.000.000' },
+  'sertifikat-standar':  { name: 'Sertifikat Standar',   ico: '📜', bg: '#FEF3C7', price: 'Rp 2.500.000' },
+  'perizinan-usaha':     { name: 'Perizinan Usaha',      ico: '🔑', bg: '#FFF1F2', price: 'Hubungi Kami' },
+  'pemasaran-digital':   { name: 'Digital Marketing',    ico: '📈', bg: '#EEF2F6', price: 'Rp 5.000.000' },
+  'virtual-office':      { name: 'Virtual Office',       ico: '🏢', bg: '#F5F3FF', price: 'Rp 3.500.000' },
 };
 
 /* ===== INIT ===== */

@@ -125,10 +125,43 @@ document.addEventListener('DOMContentLoaded', () => {
     spans[1].style.opacity   = open ? '0' : '';
     spans[2].style.transform = open ? 'translateY(-7px) rotate(-45deg)' : '';
   });
+
   mobileNav.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
+      // Don't close if it is an accordion trigger
+      if (a.classList.contains('mob-accordion-trigger') || a.classList.contains('mob-sub-trigger')) {
+        return;
+      }
       mobileNav.classList.remove('open');
       spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+    });
+  });
+
+  /* Mobile Accordion Toggle */
+  document.querySelectorAll('.mob-accordion-trigger').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      trigger.classList.toggle('active');
+      const content = trigger.nextElementSibling;
+      if (content && content.classList.contains('mob-accordion-content')) {
+        const isHidden = window.getComputedStyle(content).display === 'none';
+        content.style.display = isHidden ? 'flex' : 'none';
+      }
+    });
+  });
+
+  document.querySelectorAll('.mob-sub-trigger').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      const content = trigger.nextElementSibling;
+      if (content) {
+        const isHidden = window.getComputedStyle(content).display === 'none';
+        content.style.display = isHidden ? 'flex' : 'none';
+        const span = trigger.querySelector('span');
+        if (span) {
+          span.textContent = isHidden ? '−' : '+';
+        }
+      }
     });
   });
 
