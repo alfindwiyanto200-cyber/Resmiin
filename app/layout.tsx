@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="id">
       <body>
         <Navbar />
-        <main style={{ paddingTop: '68px' }}>
+        <main style={{ paddingTop: '76px' }}>
           {children}
         </main>
         <Footer />
