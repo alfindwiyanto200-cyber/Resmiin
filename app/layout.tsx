@@ -7,6 +7,9 @@ import Script from 'next/script';
 export const metadata: Metadata = {
   title: 'Resmiin – Business Infrastructure Partner Terpercaya di Indonesia',
   description: 'Resmiin adalah Business Infrastructure Partner paling terpercaya di Indonesia. Layanan pendirian PT, CV, perizinan, konsultasi pajak, dan hukum.',
+  verification: {
+    google: 'vbx_phu8dsUuTwMPnTRk5IEK90iVa1uiQ9ruJEFGV3M',
+  },
 };
 
 export default function RootLayout({
