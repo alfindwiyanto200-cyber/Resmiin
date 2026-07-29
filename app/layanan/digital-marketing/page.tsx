@@ -11,66 +11,37 @@ export default function DigitalMarketingPage() {
     <div style={{ background: '#FAFBFD', color: '#0D1B2A', fontFamily: 'var(--font-jakarta, sans-serif)', overflowX: 'hidden' }}>
       
       {/* SECTION 1: HERO SECTION */}
-      <section style={{ position: 'relative', background: 'linear-gradient(135deg, #0D1B2A 0%, #1565C0 100%)', color: '#fff', padding: '120px 24px 100px 24px', overflow: 'hidden' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px', alignItems: 'center', position: 'relative', zIndex: 2 }}>
+      <section style={{ 
+        position: 'relative', 
+        backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(/A_premium_iridescent_holographbn.gif)', 
+        backgroundSize: 'cover', 
+        backgroundPosition: 'center', 
+        backgroundRepeat: 'no-repeat',
+        color: '#0D1B2A', 
+        padding: '160px 24px 120px 24px', 
+        overflow: 'hidden' 
+      }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 2 }}>
           <div>
-            <span style={{ background: 'rgba(41, 182, 246, 0.15)', color: '#29B6F6', fontSize: '13px', fontWeight: 700, padding: '8px 16px', borderRadius: '100px', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'inline-block', marginBottom: '20px' }}>
+            <span style={{ background: 'rgba(21, 101, 192, 0.1)', color: '#1565C0', fontSize: '13px', fontWeight: 700, padding: '8px 16px', borderRadius: '100px', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'inline-block', marginBottom: '20px' }}>
               🚀 Growth &amp; Pemasaran Digital
             </span>
-            <h1 style={{ fontSize: 'clamp(32px, 4.5vw, 54px)', fontWeight: 800, lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: '20px' }}>
+            <h1 style={{ fontSize: 'clamp(32px, 4.5vw, 54px)', fontWeight: 800, lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: '20px', color: '#0D1B2A' }}>
               Tingkatkan Omzet Bisnis Anda Melalui Strategi Digital Marketing yang Tepat
             </h1>
-            <p style={{ fontSize: 'clamp(16px, 2vw, 18px)', color: 'rgba(255,255,255,0.85)', lineHeight: 1.6, marginBottom: '36px', fontWeight: 400 }}>
+            <p style={{ fontSize: 'clamp(16px, 2vw, 18px)', color: '#1C2D42', lineHeight: 1.6, marginBottom: '36px', fontWeight: 400 }}>
               Resmiin membantu bisnis berkembang pesat melalui strategi digital terintegrasi yang terukur, transparan, dan berbasis data. Dapatkan jangkauan pasar yang luas dan konversi maksimal.
             </p>
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'center' }}>
               <a href="https://wa.link/1c0f23" target="_blank" rel="noreferrer" style={{ background: '#00C98D', color: '#fff', fontWeight: 700, fontSize: '15px', padding: '16px 32px', borderRadius: '100px', boxShadow: '0 4px 14px rgba(0,201,141,0.3)', transition: 'transform 0.2s', display: 'inline-block' }}>
                 Konsultasi Gratis
               </a>
-              <a href="#pricing" style={{ background: 'transparent', color: '#fff', border: '2px solid rgba(255,255,255,0.3)', fontWeight: 700, fontSize: '15px', padding: '14px 30px', borderRadius: '100px', transition: 'all 0.2s', display: 'inline-block' }}>
+              <a href="#pricing" style={{ background: 'transparent', color: '#1565C0', border: '2px solid #1565C0', fontWeight: 700, fontSize: '15px', padding: '14px 30px', borderRadius: '100px', transition: 'all 0.2s', display: 'inline-block' }}>
                 Lihat Paket Layanan
               </a>
             </div>
           </div>
-          <div style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
-            {/* Visual Marketing Dashboard Graphic Representation */}
-            <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '24px', padding: '32px', width: '100%', maxWidth: '500px', backdropFilter: 'blur(10px)', boxShadow: '0 20px 50px rgba(0,0,0,0.3)' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '16px' }}>
-                <span style={{ fontWeight: 700, fontSize: '16px', color: '#fff' }}>Resmiin Growth Dashboard</span>
-                <span style={{ fontSize: '12px', color: '#00C98D', background: 'rgba(0,201,141,0.15)', padding: '4px 10px', borderRadius: '100px', fontWeight: 600 }}>• Active Campaign</span>
-              </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '24px' }}>
-                <div style={{ background: 'rgba(255, 255, 255, 0.03)', padding: '16px', borderRadius: '16px', border: '1px solid rgba(255, 255, 255, 0.05)' }}>
-                  <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)', display: 'block', marginBottom: '4px' }}>ROAS Average</span>
-                  <strong style={{ fontSize: '20px', color: '#fff', display: 'block' }}>4.8x</strong>
-                  <span style={{ fontSize: '11px', color: '#00C98D' }}>↑ +18% vs last month</span>
-                </div>
-                <div style={{ background: 'rgba(255, 255, 255, 0.03)', padding: '16px', borderRadius: '16px', border: '1px solid rgba(255, 255, 255, 0.05)' }}>
-                  <span style={{ fontSize: '12px', color: 'rgba(255,255,255,0.5)', display: 'block', marginBottom: '4px' }}>Total Leads Generated</span>
-                  <strong style={{ fontSize: '20px', color: '#fff', display: 'block' }}>+12,480</strong>
-                  <span style={{ fontSize: '11px', color: '#00C98D' }}>↑ +32% vs last month</span>
-                </div>
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px', color: 'rgba(255,255,255,0.8)' }}>
-                  <span>SEO Ranking Keywords</span>
-                  <strong>Top 3: 148 Keywords</strong>
-                </div>
-                <div style={{ width: '100%', height: '6px', background: 'rgba(255,255,255,0.1)', borderRadius: '10px', overflow: 'hidden' }}>
-                  <div style={{ width: '85%', height: '100%', background: '#29B6F6', borderRadius: '10px' }}></div>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px', color: 'rgba(255,255,255,0.8)' }}>
-                  <span>Conversion Rate</span>
-                  <strong>3.85%</strong>
-                </div>
-                <div style={{ width: '100%', height: '6px', background: 'rgba(255,255,255,0.1)', borderRadius: '10px', overflow: 'hidden' }}>
-                  <div style={{ width: '72%', height: '100%', background: '#00C98D', borderRadius: '10px' }}></div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 80% 20%, rgba(41, 182, 246, 0.15) 0%, transparent 60%)', pointerEvents: 'none' }}></div>
       </section>
 
       {/* SECTION 2: KENAPA MEMILIH RESMIIN */}
