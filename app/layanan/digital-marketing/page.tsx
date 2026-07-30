@@ -404,7 +404,7 @@ export default function DigitalMarketingPage() {
             <a href="https://wa.link/1c0f23" target="_blank" rel="noreferrer" style={{ background: '#00C98D', color: '#fff', fontWeight: 700, fontSize: '15px', padding: '16px 32px', borderRadius: '100px', boxShadow: '0 4px 14px rgba(0,201,141,0.3)', transition: 'all 0.2s', display: 'inline-block' }}>
               Konsultasi Gratis via WhatsApp
             </a>
-            <a href="mailto:info@resmiin.com" style={{ background: 'transparent', color: '#fff', border: '2px solid rgba(255,255,255,0.3)', fontWeight: 700, fontSize: '15px', padding: '14px 30px', borderRadius: '100px', transition: 'all 0.2s', display: 'inline-block' }}>
+            <a href="mailto:adm.resmiin@gmail.com" style={{ background: 'transparent', color: '#fff', border: '2px solid rgba(255,255,255,0.3)', fontWeight: 700, fontSize: '15px', padding: '14px 30px', borderRadius: '100px', transition: 'all 0.2s', display: 'inline-block' }}>
               Hubungi via Email
             </a>
           </div>

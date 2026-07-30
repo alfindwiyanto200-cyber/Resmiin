@@ -322,7 +322,7 @@ export default function TentangKamiPage() {
             <a href="https://wa.link/1c0f23" target="_blank" rel="noreferrer" className="cta-btn-wa" style={{ border: 'none', background: '#fff', color: '#0D1B2A' }}>
               Chat Konsultan WhatsApp
             </a>
-            <a href="mailto:info@resmiin.com" className="cta-btn-email" style={{ border: '2px solid rgba(255,255,255,0.5)' }}>
+            <a href="mailto:adm.resmiin@gmail.com" className="cta-btn-email" style={{ border: '2px solid rgba(255,255,255,0.5)' }}>
               Kirim Email
             </a>
           </div>

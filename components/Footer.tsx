@@ -81,10 +81,13 @@ export default function Footer() {
                   <a href="https://wa.link/1c0f23" target="_blank" rel="noreferrer">0822-6009-2481</a>
                 </li>
                 <li>
-                  <a href="mailto:info@resmiin.com">info@resmiin.com</a>
+                  <a href="mailto:adm.resmiin@gmail.com">adm.resmiin@gmail.com</a>
                 </li>
                 <li>
-                  <span style={{ color: '#8696A0', fontSize: '15px' }}>Jakarta, Indonesia</span>
+                  <span style={{ color: '#8696A0', fontSize: '15px', fontWeight: 600, display: 'block', marginBottom: '4px' }}>PT DELAPAN BERKAH SEJATERA</span>
+                  <span style={{ color: '#8696A0', fontSize: '14px', lineHeight: '1.4', display: 'block' }}>
+                    Jl. Merdeka No. 49, Kel. Babakan Ciamis, Kec. Sumur Bandung, Kota Bandung, Provinsi Jawa Barat
+                  </span>
                 </li>
               </ul>
             </div>
@@ -100,7 +103,7 @@ export default function Footer() {
           
           {/* LEFT: COPYRIGHT & PRIVACY */}
           <div className="footer-bottom-left">
-            <span className="footer-copy">2026 © Resmiin. All rights reserved.</span>
+            <span className="footer-copy">2026 © PT DELAPAN BERKAH SEJATERA. All rights reserved.</span>
             <div className="footer-legal-links">
               <Link href="#">Ketentuan &amp; Kebijakan Privasi</Link>
               <span className="footer-dot">•</span>

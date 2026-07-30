@@ -229,7 +229,7 @@ export default function ServiceDetailView(props: ServiceDetailProps) {
           <p>Hubungi tim Resmiin untuk proses pembuatan {title} yang cepat &amp; terpercaya.</p>
           <div className="cta-btns">
             <a href={waUrl} className="cta-btn-wa" target="_blank" rel="noreferrer">Chat WhatsApp</a>
-            <a href="mailto:info@resmiin.com" className="cta-btn-email">Kirim Email</a>
+            <a href="mailto:adm.resmiin@gmail.com" className="cta-btn-email">Kirim Email</a>
           </div>
         </div>
       </section>
