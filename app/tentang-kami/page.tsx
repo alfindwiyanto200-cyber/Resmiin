@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import CompanyMarquee from '@/components/CompanyMarquee';
 
 export const metadata: Metadata = {
   title: 'Tentang Kami – Resmiin',
@@ -14,16 +15,34 @@ export default function TentangKamiPage() {
     { ico: '🤝', title: 'Pendampingan Penuh', desc: 'Kami tidak hanya mengurus dokumen, tetapi juga mendampingi dan memberikan konsultasi bisnis berkelanjutan untuk scale-up bisnis Anda.' }
   ];
 
-  const clients = [
-    { name: 'PT ABC Indonesia', logo: '🏢' },
-    { name: 'PT Nusantara Digital', logo: '🌐' },
-    { name: 'PT Global Teknologi', logo: '💻' },
-    { name: 'PT Maju Bersama', logo: '🤝' },
-    { name: 'PT Sinergi Capital', logo: '📈' },
-    { name: 'PT Kreatif Nusantara', logo: '🎨' },
-    { name: 'PT Prima Logistik', logo: '📦' },
-    { name: 'PT Sentosa Abadi', logo: '🛡️' }
+  const row1Clients = [
+    { name: 'PT KEMUNING BERKAH SENTOSA', logo: '🏢' },
+    { name: 'PT WIYUNG BUKITMAS MAKMUR', logo: '🌐' },
+    { name: 'PT BRINGIN INDAH SEJAHTERA', logo: '🌾' },
+    { name: 'PT DARMOPERMAI GUNUNG ARTHA', logo: '🏔️' },
+    { name: 'PT PRIMA INDO SEJAHTERA', logo: '🤝' },
+    { name: 'PT REKANESHA INOVASI STRATEGIS', logo: '💡' },
+    { name: 'PT RUANG INKUBASI NUSANTARA', logo: '🚀' },
+    { name: 'PT ZIYAN PESONA ABADI', logo: '💎' },
+    { name: 'PT HALLO BESTIE WIDJAYA', logo: '✨' },
+    { name: 'PT NUSA ARTHA ADVISORY', logo: '📈' },
+    { name: 'PT ALL VERSE INDONESIA', logo: '🌍' }
   ];
+
+  const row2Clients = [
+    { name: 'PT HIDUPKAN MIMPI MASA KECIL', logo: '🎈' },
+    { name: 'PT HUNIVEST GRAHA MAHAKARYA', logo: '🏛️' },
+    { name: 'PT BAJA PUTERA SEJAHTERA', logo: '🏗️' },
+    { name: 'PT JURAGAN OMAH SINGGAH', logo: '🏡' },
+    { name: 'CV PESONA CANTIKA  NUSANTARA', logo: '🌸' },
+    { name: 'CV ANSA KARYA SEJAHTERA', logo: '💼' },
+    { name: 'CV SEKAR RAHAYU', logo: '🌺' },
+    { name: 'CV AVARA NUSANTARA', logo: '🗺️' },
+    { name: 'CV WHHY BERKAH UTAMA', logo: '🌱' },
+    { name: 'CV KATIGA TOTAL GLAMOUR', logo: '💄' },
+    { name: 'CV PANYILEUKAN MITRA NIAGA', logo: '🛒' }
+  ];
+
 
   const testimonials = [
     {
@@ -246,30 +265,7 @@ export default function TentangKamiPage() {
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
-            gap: '20px'
-          }}>
-            {clients.map((client, i) => (
-              <div key={i} style={{
-                background: '#fff',
-                border: '1px solid #EAEEF4',
-                borderRadius: '12px',
-                padding: '24px',
-                textAlign: 'center',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '12px',
-                boxShadow: '0 4px 12px rgba(13,27,42,0.02)',
-                transition: 'all 0.2s ease'
-              }}>
-                <span style={{ fontSize: '24px' }}>{client.logo}</span>
-                <strong style={{ fontSize: '14px', color: '#2C4360' }}>{client.name}</strong>
-              </div>
-            ))}
-          </div>
+          <CompanyMarquee row1={row1Clients} row2={row2Clients} />
         </section>
 
         {/* SECTION 6: TESTIMONI (SLIDER CAROUSEL STYLE) */}

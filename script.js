@@ -344,5 +344,48 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoPlay();
   }
 
+  /* ===== MARQUEE DRAG TO SCROLL ===== */
+  document.querySelectorAll('.marquee-row').forEach(row => {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    const inner = row.querySelector('.marquee-inner');
+
+    row.addEventListener('mousedown', (e) => {
+      isDown = true;
+      row.style.cursor = 'grabbing';
+      if (inner) {
+        inner.style.animationPlayState = 'paused';
+      }
+      startX = e.pageX - row.offsetLeft;
+      scrollLeft = row.scrollLeft;
+    });
+
+    row.addEventListener('mouseleave', () => {
+      isDown = false;
+      row.style.cursor = 'grab';
+      if (inner) {
+        inner.style.animationPlayState = '';
+      }
+    });
+
+    row.addEventListener('mouseup', () => {
+      isDown = false;
+      row.style.cursor = 'grab';
+      if (inner) {
+        inner.style.animationPlayState = '';
+      }
+    });
+
+    row.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - row.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      row.scrollLeft = scrollLeft - walk;
+    });
+  });
+
   console.log('✅ Resmiin loaded');
 });
+

@@ -2424,3 +2424,92 @@ ul { list-style: none; }
   transform: translateY(-4px);
   box-shadow: var(--shadow-m);
 }
+
+/* Custom styling for the marquee section */
+.marquee-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.marquee-row {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+
+.marquee-row::-webkit-scrollbar {
+  display: none;
+}
+
+.marquee-row:active {
+  cursor: grabbing;
+}
+
+.marquee-inner {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+}
+
+/* Row 1 animation: left to right (kiri ke kanan) */
+.marquee-row.row-left-to-right .marquee-inner {
+  animation: scroll-left-to-right 45s linear infinite;
+}
+
+/* Row 2 animation: right to left (kanan ke kiri) */
+.marquee-row.row-right-to-left .marquee-inner {
+  animation: scroll-right-to-left 45s linear infinite;
+}
+
+/* Pause on hover/interaction */
+.marquee-row:hover .marquee-inner {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left-to-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scroll-right-to-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-card {
+  flex-shrink: 0;
+  background: #fff;
+  border: 1px solid #EAEEF4;
+  border-radius: 12px;
+  padding: 16px 24px;
+  min-width: 250px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(13,27,42,0.02);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.marquee-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(13,27,42,0.06);
+  border-color: #cbd5e1;
+}
+
