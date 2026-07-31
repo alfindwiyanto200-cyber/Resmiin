@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import GalleryMarquee from '@/components/GalleryMarquee';
 
 export default function HomePage() {
   const [heroLoaded, setHeroLoaded] = useState(false);
@@ -10,6 +11,15 @@ export default function HomePage() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setHeroLoaded(true);
   }, []);
+
+  const galleryImages = [
+    '/assets/gallery/client-1.jpeg',
+    '/assets/gallery/client-2.jpeg',
+    '/assets/gallery/client-3.jpeg',
+    '/assets/gallery/client-4.jpeg',
+    '/assets/gallery/client-5.jpeg',
+    '/assets/gallery/client-6.jpeg'
+  ];
 
   return (
     <>
@@ -132,6 +142,17 @@ export default function HomePage() {
           </div>
         </div>
 
+      </section>
+
+      {/* SECTION 6.5: GALLERY FOTO BERSAMA KLIEN */}
+      <section style={{ padding: '20px 0 60px', borderTop: 'none' }}>
+        <div style={{ textAlign: 'center', marginBottom: '35px' }}>
+          <span className="why-label">Dokumentasi</span>
+          <h2 style={{ fontSize: 'clamp(24px, 3vw, 30px)', fontWeight: 800, letterSpacing: '-0.02em', marginTop: '12px' }}>
+            Kebersamaan Bersama Klien Kami
+          </h2>
+        </div>
+        <GalleryMarquee images={galleryImages} />
       </section>
 
       {/* ===== VISI MISI ===== */}
