@@ -17,6 +17,7 @@ export interface Article {
   ogDescription?: string | null;
   ogImage?: string | null;
   readTime?: string;
+  schemaMarkup?: string | null;
 }
 
 export const FALLBACK_ARTICLES: Article[] = [

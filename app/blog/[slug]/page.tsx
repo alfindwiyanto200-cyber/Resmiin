@@ -46,6 +46,24 @@ export default async function ArticleDetailPage({ params }: Props) {
     notFound();
   }
 
+  // Parse FAQ list from schemaMarkup
+  let faqItems: { question: string; answer: string }[] = [];
+  if (article.schemaMarkup) {
+    try {
+      const parsed = JSON.parse(article.schemaMarkup);
+      const schemas = Array.isArray(parsed) ? parsed : [parsed];
+      const faqSchema = schemas.find((s: any) => s && s['@type'] === 'FAQPage');
+      if (faqSchema && Array.isArray(faqSchema.mainEntity)) {
+        faqItems = faqSchema.mainEntity.map((item: any) => ({
+          question: item.name || '',
+          answer: item.acceptedAnswer?.text || ''
+        })).filter((item: any) => item.question && item.answer);
+      }
+    } catch (e) {
+      console.error('Failed to parse FAQ schema', e);
+    }
+  }
+
   const coverUrl = getImageUrl(article.featuredImage);
   const formattedDate = article.publishedAt
     ? new Date(article.publishedAt).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' })
@@ -155,6 +173,42 @@ export default async function ArticleDetailPage({ params }: Props) {
           <p style={{ marginBottom: '20px' }}>{article.excerpt}</p>
         )}
       </main>
+
+      {/* FAQ VISUAL ACCORDION */}
+      {faqItems.length > 0 && (
+        <section className="article-faq" style={{ maxWidth: '760px', margin: '0 auto 60px', padding: '0 24px' }}>
+          <h3 style={{ fontSize: '24px', fontWeight: 800, color: '#0D1B2A', marginBottom: '24px', borderBottom: '2px solid #EAEEF4', paddingBottom: '12px' }}>
+            Pertanyaan Sering Diajukan (FAQ)
+          </h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {faqItems.map((faq: any, index: number) => (
+              <details key={index} className="faq-item" style={{
+                background: '#F5F7FA',
+                border: '1px solid #EAEEF4',
+                borderRadius: '16px',
+                padding: '20px',
+                cursor: 'pointer'
+              }}>
+                <summary style={{ fontSize: '16px', fontWeight: 800, color: '#0D1B2A', outline: 'none', listStyle: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span>{faq.question}</span>
+                  <span style={{ color: '#1565C0', fontSize: '18px' }}>+</span>
+                </summary>
+                <p style={{ marginTop: '12px', fontSize: '15px', color: '#637B96', lineHeight: 1.6, margin: '12px 0 0', cursor: 'default' }} onClick={(e) => e.stopPropagation()}>
+                  {faq.answer}
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Schema JSON-LD Script Injection */}
+      {article.schemaMarkup && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: article.schemaMarkup }}
+        />
+      )}
 
       {/* AUTHOR BOX */}
       <div style={{ maxWidth: '760px', margin: '0 auto 60px', padding: '0 24px' }}>
