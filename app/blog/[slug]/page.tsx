@@ -193,7 +193,7 @@ export default async function ArticleDetailPage({ params }: Props) {
                   <span>{faq.question}</span>
                   <span style={{ color: '#1565C0', fontSize: '18px' }}>+</span>
                 </summary>
-                <p style={{ marginTop: '12px', fontSize: '15px', color: '#637B96', lineHeight: 1.6, margin: '12px 0 0', cursor: 'default' }} onClick={(e) => e.stopPropagation()}>
+                <p style={{ marginTop: '12px', fontSize: '15px', color: '#637B96', lineHeight: 1.6, margin: '12px 0 0', cursor: 'default' }}>
                   {faq.answer}
                 </p>
               </details>
