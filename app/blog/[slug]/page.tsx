@@ -84,10 +84,73 @@ export default async function ArticleDetailPage({ params }: Props) {
       {/* BODY CONTENT */}
       <main className="article-body" style={{ maxWidth: '760px', margin: '0 auto', padding: '0 24px 60px', fontSize: '17px', lineHeight: 1.7, color: '#2C4360' }}>
         {article.content ? (
-          <div
-            dangerouslySetInnerHTML={{ __html: article.content }}
-            className="prose-content"
-          />
+          <>
+            <div
+              dangerouslySetInnerHTML={{ __html: article.content }}
+              className="prose-content"
+            />
+            <style>{`
+              .prose-content table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 28px 0;
+                font-size: 15px;
+                text-align: left;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                overflow: hidden;
+              }
+              .prose-content th {
+                background-color: #f1f5f9;
+                color: #0f172a;
+                font-weight: 700;
+                padding: 14px 16px;
+                border-bottom: 2px solid #cbd5e1;
+                border-right: 1px solid #e2e8f0;
+              }
+              .prose-content td {
+                padding: 14px 16px;
+                border-bottom: 1px solid #e2e8f0;
+                border-right: 1px solid #e2e8f0;
+                color: #334155;
+                vertical-align: middle;
+              }
+              .prose-content tr:nth-child(even) {
+                background-color: #f8fafc;
+              }
+              .prose-content tr:hover {
+                background-color: #f1f5f9;
+              }
+              .prose-content th:last-child,
+              .prose-content td:last-child {
+                border-right: none;
+              }
+              .prose-content p {
+                margin-bottom: 20px;
+              }
+              .prose-content h2 {
+                font-size: 24px;
+                font-weight: 800;
+                color: #0d1b2d;
+                margin-top: 36px;
+                margin-bottom: 16px;
+              }
+              .prose-content h3 {
+                font-size: 20px;
+                font-weight: 700;
+                color: #0d1b2d;
+                margin-top: 28px;
+                margin-bottom: 12px;
+              }
+              .prose-content ul, .prose-content ol {
+                margin-bottom: 20px;
+                padding-left: 24px;
+              }
+              .prose-content li {
+                margin-bottom: 8px;
+              }
+            `}</style>
+          </>
         ) : (
           <p style={{ marginBottom: '20px' }}>{article.excerpt}</p>
         )}
