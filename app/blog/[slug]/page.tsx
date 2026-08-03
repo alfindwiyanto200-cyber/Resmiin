@@ -30,10 +30,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${title} – Resmiin`,
     description: description ?? undefined,
+    alternates: article.canonicalUrl ? {
+      canonical: article.canonicalUrl,
+    } : undefined,
+    robots: article.metaRobots || undefined,
     openGraph: {
       title: article.ogTitle || title,
       description: article.ogDescription || description || undefined,
       images: article.ogImage ? [article.ogImage] : article.featuredImage ? [article.featuredImage] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.twitterTitle || article.ogTitle || title,
+      description: article.twitterDescription || article.ogDescription || description || undefined,
+      images: article.twitterImage ? [article.twitterImage] : (article.ogImage ? [article.ogImage] : (article.featuredImage ? [article.featuredImage] : [])),
     },
   };
 }

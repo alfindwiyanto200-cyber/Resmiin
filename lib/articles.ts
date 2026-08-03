@@ -18,6 +18,11 @@ export interface Article {
   ogImage?: string | null;
   readTime?: string;
   schemaMarkup?: string | null;
+  canonicalUrl?: string | null;
+  metaRobots?: string | null;
+  twitterTitle?: string | null;
+  twitterDescription?: string | null;
+  twitterImage?: string | null;
 }
 
 export const FALLBACK_ARTICLES: Article[] = [
