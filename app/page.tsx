@@ -17,8 +17,7 @@ export default function HomePage() {
     '/assets/gallery/client-2.jpeg',
     '/assets/gallery/client-3.jpeg',
     '/assets/gallery/client-4.jpeg',
-    '/assets/gallery/client-5.jpeg',
-    '/assets/gallery/client-6.jpeg'
+    '/assets/gallery/client-5.jpeg'
   ];
 
   return (
